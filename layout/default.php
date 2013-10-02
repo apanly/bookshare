@@ -36,7 +36,19 @@
     <?php echo $layoutContent;?>
     <hr>
     <div class="footer">
-        <p>&copy; Company 2013</p>
+        <div class="row-fluid">
+                <div class="span4">
+                    <p>
+                        ShareBook  &copy; Vincentguo<br/>
+                        QQ:364054110<br/>
+                        Sina Weibo:<a href="http://www.weibo.com/qyclass/" target="_blank">Follow Me</a>
+                        Email:Vincentguo@anjuke.com
+                    </p>
+                </div>
+                <div class="span8" style="text-align: right;">
+                        <img  style="width: 150px; height: 150px;" src="static/img/follow.jpeg"/>
+                </div>
+        </div>
     </div>
 </div> <!-- /container -->
 <!-- Le javascript
