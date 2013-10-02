@@ -1,0 +1,7 @@
+.masthead .muted{
+    background: #FFFFFF url("../img/logo.gif") no-repeat;
+}
+.masthead h3.muted{
+    line-height: 60px;
+    padding-left: 200px;
+}

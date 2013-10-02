@@ -18,13 +18,13 @@
 <body>
 <div class="container">
     <div class="masthead">
-        <h3 class="muted">以书会友</h3>
+        <h3 class="muted">ShareBook&nbsp;&nbsp;以书会友</h3>
         <div class="navbar">
             <div class="navbar-inner">
                 <div class="container">
                     <ul class="nav">
-                        <li class="active"><a href="index.php">Library</a></li>
-                        <li><a href="javascript:void(0);">Downloads</a></li>
+                        <li <?php if($atype=="home"):?> class="active" <?php endif;?>><a href="index.php">Library</a></li>
+                        <li <?php if($atype=="downloads"):?> class="active" <?php endif;?>><a href="index.php?a=downloads">Downloads</a></li>
                         <li><a href="javascript:void(0);">Projects</a></li>
                         <li><a href="javascript:void(0);">About</a></li>
                         <li><a href="javascript:void(0);">Contact</a></li>

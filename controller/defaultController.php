@@ -21,6 +21,7 @@ class defaultController extends Controller
         }
         $this->data=$bookinfo;
         $this->pagercnt=count($bookinfo);
+        $this->atype="home";
         return $this->render("default");
     }
 
@@ -39,8 +40,15 @@ class defaultController extends Controller
         $this->book=$bookinfo;
         $this->bookprev=$bookprev;
         $this->booknext=$booknext;
+        $this->atype="home";
         return $this->render("default");
     }
+
+    public function downloadsAction(){
+        $this->atype="downloads";
+        return $this->render("default");
+    }
+
     /**
      * 没有获取价格的地方
      */

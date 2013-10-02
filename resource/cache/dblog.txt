@@ -1054,3 +1054,359 @@
 2013-10-02 15:25:09 获取一条记录 SELECT COUNT(*) AS num FROM book
 2013-10-02 15:25:09 释放结果集
 2013-10-02 15:25:09 完成整个查询任务,所用时间为0.0048830509185791
+2013-10-02 15:37:26 查询 SELECT * FROM book ORDER BY ID DESC LIMIT 0,12
+2013-10-02 15:37:26 获取全部记录 SELECT * FROM book ORDER BY ID DESC LIMIT 0,12
+2013-10-02 15:37:26 查询 SELECT COUNT(*) AS num FROM book
+2013-10-02 15:37:26 获取一条记录 SELECT COUNT(*) AS num FROM book
+2013-10-02 15:37:26 释放结果集
+2013-10-02 15:37:26 完成整个查询任务,所用时间为0.001802921295166
+2013-10-02 15:43:54 查询 SELECT * FROM book ORDER BY ID DESC LIMIT 0,12
+2013-10-02 15:43:54 获取全部记录 SELECT * FROM book ORDER BY ID DESC LIMIT 0,12
+2013-10-02 15:43:54 查询 SELECT COUNT(*) AS num FROM book
+2013-10-02 15:43:54 获取一条记录 SELECT COUNT(*) AS num FROM book
+2013-10-02 15:43:54 释放结果集
+2013-10-02 15:43:54 完成整个查询任务,所用时间为0.003216028213501
+2013-10-02 15:44:38 查询 SELECT * FROM book ORDER BY ID DESC LIMIT 0,12
+2013-10-02 15:44:38 获取全部记录 SELECT * FROM book ORDER BY ID DESC LIMIT 0,12
+2013-10-02 15:44:38 查询 SELECT COUNT(*) AS num FROM book
+2013-10-02 15:44:38 获取一条记录 SELECT COUNT(*) AS num FROM book
+2013-10-02 15:44:38 释放结果集
+2013-10-02 15:44:38 完成整个查询任务,所用时间为0.0022859573364258
+2013-10-02 15:51:29 查询 SELECT * FROM book ORDER BY ID DESC LIMIT 0,12
+2013-10-02 15:51:29 获取全部记录 SELECT * FROM book ORDER BY ID DESC LIMIT 0,12
+2013-10-02 15:51:29 查询 SELECT COUNT(*) AS num FROM book
+2013-10-02 15:51:29 获取一条记录 SELECT COUNT(*) AS num FROM book
+2013-10-02 15:51:29 释放结果集
+2013-10-02 15:51:29 完成整个查询任务,所用时间为0.002540111541748
+2013-10-02 15:52:04 查询 SELECT * FROM book ORDER BY ID DESC LIMIT 0,12
+2013-10-02 15:52:04 获取全部记录 SELECT * FROM book ORDER BY ID DESC LIMIT 0,12
+2013-10-02 15:52:04 查询 SELECT COUNT(*) AS num FROM book
+2013-10-02 15:52:04 获取一条记录 SELECT COUNT(*) AS num FROM book
+2013-10-02 15:52:04 释放结果集
+2013-10-02 15:52:04 完成整个查询任务,所用时间为0.0020828247070312
+2013-10-02 15:52:37 查询 SELECT * FROM book ORDER BY ID DESC LIMIT 0,12
+2013-10-02 15:52:37 获取全部记录 SELECT * FROM book ORDER BY ID DESC LIMIT 0,12
+2013-10-02 15:52:37 查询 SELECT COUNT(*) AS num FROM book
+2013-10-02 15:52:37 获取一条记录 SELECT COUNT(*) AS num FROM book
+2013-10-02 15:52:37 释放结果集
+2013-10-02 15:52:37 完成整个查询任务,所用时间为0.0022599697113037
+2013-10-02 21:34:36 查询 SELECT * FROM book ORDER BY ID DESC LIMIT 0,12
+2013-10-02 21:34:36 获取全部记录 SELECT * FROM book ORDER BY ID DESC LIMIT 0,12
+2013-10-02 21:34:36 查询 SELECT COUNT(*) AS num FROM book
+2013-10-02 21:34:36 获取一条记录 SELECT COUNT(*) AS num FROM book
+2013-10-02 21:34:36 释放结果集
+2013-10-02 21:34:36 完成整个查询任务,所用时间为0.0023729801177979
+2013-10-02 21:34:49 查询 SELECT * FROM book ORDER BY ID DESC LIMIT 0,12
+2013-10-02 21:34:49 获取全部记录 SELECT * FROM book ORDER BY ID DESC LIMIT 0,12
+2013-10-02 21:34:49 查询 SELECT COUNT(*) AS num FROM book
+2013-10-02 21:34:49 获取一条记录 SELECT COUNT(*) AS num FROM book
+2013-10-02 21:34:49 释放结果集
+2013-10-02 21:34:49 完成整个查询任务,所用时间为0.0035030841827393
+2013-10-02 21:37:03 查询 SELECT * FROM book ORDER BY ID DESC LIMIT 0,12
+2013-10-02 21:37:03 获取全部记录 SELECT * FROM book ORDER BY ID DESC LIMIT 0,12
+2013-10-02 21:37:03 查询 SELECT COUNT(*) AS num FROM book
+2013-10-02 21:37:03 获取一条记录 SELECT COUNT(*) AS num FROM book
+2013-10-02 21:37:03 释放结果集
+2013-10-02 21:37:03 完成整个查询任务,所用时间为0.0020890235900879
+2013-10-02 21:37:13 查询 SELECT * FROM book ORDER BY ID DESC LIMIT 0,12
+2013-10-02 21:37:13 获取全部记录 SELECT * FROM book ORDER BY ID DESC LIMIT 0,12
+2013-10-02 21:37:13 查询 SELECT COUNT(*) AS num FROM book
+2013-10-02 21:37:13 获取一条记录 SELECT COUNT(*) AS num FROM book
+2013-10-02 21:37:13 释放结果集
+2013-10-02 21:37:13 完成整个查询任务,所用时间为0.0021460056304932
+2013-10-02 21:37:25 查询 SELECT * FROM book ORDER BY ID DESC LIMIT 0,12
+2013-10-02 21:37:25 获取全部记录 SELECT * FROM book ORDER BY ID DESC LIMIT 0,12
+2013-10-02 21:37:25 查询 SELECT COUNT(*) AS num FROM book
+2013-10-02 21:37:25 获取一条记录 SELECT COUNT(*) AS num FROM book
+2013-10-02 21:37:25 释放结果集
+2013-10-02 21:37:25 完成整个查询任务,所用时间为0.0029618740081787
+2013-10-02 21:42:48 查询 SELECT * FROM book ORDER BY ID DESC LIMIT 0,12
+2013-10-02 21:42:48 获取全部记录 SELECT * FROM book ORDER BY ID DESC LIMIT 0,12
+2013-10-02 21:42:48 查询 SELECT COUNT(*) AS num FROM book
+2013-10-02 21:42:48 获取一条记录 SELECT COUNT(*) AS num FROM book
+2013-10-02 21:42:48 释放结果集
+2013-10-02 21:42:48 完成整个查询任务,所用时间为0.0021810531616211
+2013-10-02 21:42:52 查询 SELECT * FROM book ORDER BY ID DESC LIMIT 0,12
+2013-10-02 21:42:52 获取全部记录 SELECT * FROM book ORDER BY ID DESC LIMIT 0,12
+2013-10-02 21:42:52 查询 SELECT COUNT(*) AS num FROM book
+2013-10-02 21:42:52 获取一条记录 SELECT COUNT(*) AS num FROM book
+2013-10-02 21:42:52 释放结果集
+2013-10-02 21:42:52 完成整个查询任务,所用时间为0.0024750232696533
+2013-10-02 22:04:28 查询 SELECT * FROM book ORDER BY ID DESC LIMIT 0,12
+2013-10-02 22:04:28 获取全部记录 SELECT * FROM book ORDER BY ID DESC LIMIT 0,12
+2013-10-02 22:04:28 查询 SELECT COUNT(*) AS num FROM book
+2013-10-02 22:04:28 获取一条记录 SELECT COUNT(*) AS num FROM book
+2013-10-02 22:04:28 释放结果集
+2013-10-02 22:04:28 完成整个查询任务,所用时间为0.0030930042266846
+2013-10-02 22:08:47 查询 SELECT * FROM book ORDER BY ID DESC LIMIT 0,12
+2013-10-02 22:08:47 获取全部记录 SELECT * FROM book ORDER BY ID DESC LIMIT 0,12
+2013-10-02 22:08:47 查询 SELECT COUNT(*) AS num FROM book
+2013-10-02 22:08:47 获取一条记录 SELECT COUNT(*) AS num FROM book
+2013-10-02 22:08:47 释放结果集
+2013-10-02 22:08:47 完成整个查询任务,所用时间为0.0029840469360352
+2013-10-02 22:09:05 查询 SELECT * FROM book ORDER BY ID DESC LIMIT 0,12
+2013-10-02 22:09:05 获取全部记录 SELECT * FROM book ORDER BY ID DESC LIMIT 0,12
+2013-10-02 22:09:05 查询 SELECT COUNT(*) AS num FROM book
+2013-10-02 22:09:05 获取一条记录 SELECT COUNT(*) AS num FROM book
+2013-10-02 22:09:05 释放结果集
+2013-10-02 22:09:05 完成整个查询任务,所用时间为0.0021200180053711
+2013-10-02 22:09:42 查询 SELECT * FROM book ORDER BY ID DESC LIMIT 12,12
+2013-10-02 22:09:42 获取全部记录 SELECT * FROM book ORDER BY ID DESC LIMIT 12,12
+2013-10-02 22:09:42 查询 SELECT COUNT(*) AS num FROM book
+2013-10-02 22:09:42 获取一条记录 SELECT COUNT(*) AS num FROM book
+2013-10-02 22:09:42 释放结果集
+2013-10-02 22:09:42 完成整个查询任务,所用时间为0.0046138763427734
+2013-10-02 22:16:41 查询 SELECT * FROM book where id=19
+2013-10-02 22:16:41 获取一条记录 SELECT * FROM book where id=19
+2013-10-02 22:16:41 查询 SELECT * FROM book where id<19 order by id desc limit 1
+2013-10-02 22:16:41 获取一条记录 SELECT * FROM book where id<19 order by id desc limit 1
+2013-10-02 22:16:41 查询 SELECT * FROM book where id>19 order by id asc limit 1
+2013-10-02 22:16:41 获取一条记录 SELECT * FROM book where id>19 order by id asc limit 1
+2013-10-02 22:16:41 释放结果集
+2013-10-02 22:16:41 完成整个查询任务,所用时间为0.0020840167999268
+2013-10-02 22:18:27 查询 SELECT * FROM book where id=19
+2013-10-02 22:18:27 获取一条记录 SELECT * FROM book where id=19
+2013-10-02 22:18:27 查询 SELECT * FROM book where id<19 order by id desc limit 1
+2013-10-02 22:18:27 获取一条记录 SELECT * FROM book where id<19 order by id desc limit 1
+2013-10-02 22:18:27 查询 SELECT * FROM book where id>19 order by id asc limit 1
+2013-10-02 22:18:27 获取一条记录 SELECT * FROM book where id>19 order by id asc limit 1
+2013-10-02 22:18:27 释放结果集
+2013-10-02 22:18:27 完成整个查询任务,所用时间为0.0018560886383057
+2013-10-02 22:28:02 查询 SELECT * FROM book ORDER BY ID DESC LIMIT 0,12
+2013-10-02 22:28:02 获取全部记录 SELECT * FROM book ORDER BY ID DESC LIMIT 0,12
+2013-10-02 22:28:02 查询 SELECT COUNT(*) AS num FROM book
+2013-10-02 22:28:02 获取一条记录 SELECT COUNT(*) AS num FROM book
+2013-10-02 22:28:02 释放结果集
+2013-10-02 22:28:02 完成整个查询任务,所用时间为0.019973993301392
+2013-10-02 22:40:00 查询 SELECT * FROM book ORDER BY ID DESC LIMIT 0,12
+2013-10-02 22:40:00 获取全部记录 SELECT * FROM book ORDER BY ID DESC LIMIT 0,12
+2013-10-02 22:40:00 查询 SELECT COUNT(*) AS num FROM book
+2013-10-02 22:40:00 获取一条记录 SELECT COUNT(*) AS num FROM book
+2013-10-02 22:40:00 释放结果集
+2013-10-02 22:40:00 完成整个查询任务,所用时间为0.0035841464996338
+2013-10-02 22:40:02 查询 SELECT * FROM book where id=32
+2013-10-02 22:40:02 获取一条记录 SELECT * FROM book where id=32
+2013-10-02 22:40:02 查询 SELECT * FROM book where id<32 order by id desc limit 1
+2013-10-02 22:40:02 获取一条记录 SELECT * FROM book where id<32 order by id desc limit 1
+2013-10-02 22:40:02 查询 SELECT * FROM book where id>32 order by id asc limit 1
+2013-10-02 22:40:02 获取一条记录 SELECT * FROM book where id>32 order by id asc limit 1
+2013-10-02 22:40:02 释放结果集
+2013-10-02 22:40:02 完成整个查询任务,所用时间为0.0026969909667969
+2013-10-02 22:41:40 查询 SELECT * FROM book where id=31
+2013-10-02 22:41:40 获取一条记录 SELECT * FROM book where id=31
+2013-10-02 22:41:40 查询 SELECT * FROM book where id<31 order by id desc limit 1
+2013-10-02 22:41:40 获取一条记录 SELECT * FROM book where id<31 order by id desc limit 1
+2013-10-02 22:41:40 查询 SELECT * FROM book where id>31 order by id asc limit 1
+2013-10-02 22:41:40 获取一条记录 SELECT * FROM book where id>31 order by id asc limit 1
+2013-10-02 22:41:40 释放结果集
+2013-10-02 22:41:40 完成整个查询任务,所用时间为0.0039749145507812
+2013-10-02 22:41:42 查询 SELECT * FROM book where id=30
+2013-10-02 22:41:42 获取一条记录 SELECT * FROM book where id=30
+2013-10-02 22:41:42 查询 SELECT * FROM book where id<30 order by id desc limit 1
+2013-10-02 22:41:42 获取一条记录 SELECT * FROM book where id<30 order by id desc limit 1
+2013-10-02 22:41:42 查询 SELECT * FROM book where id>30 order by id asc limit 1
+2013-10-02 22:41:42 获取一条记录 SELECT * FROM book where id>30 order by id asc limit 1
+2013-10-02 22:41:42 释放结果集
+2013-10-02 22:41:42 完成整个查询任务,所用时间为0.0039458274841309
+2013-10-02 22:41:44 查询 SELECT * FROM book where id=29
+2013-10-02 22:41:44 获取一条记录 SELECT * FROM book where id=29
+2013-10-02 22:41:44 查询 SELECT * FROM book where id<29 order by id desc limit 1
+2013-10-02 22:41:44 获取一条记录 SELECT * FROM book where id<29 order by id desc limit 1
+2013-10-02 22:41:44 查询 SELECT * FROM book where id>29 order by id asc limit 1
+2013-10-02 22:41:44 获取一条记录 SELECT * FROM book where id>29 order by id asc limit 1
+2013-10-02 22:41:44 释放结果集
+2013-10-02 22:41:44 完成整个查询任务,所用时间为0.0019760131835938
+2013-10-02 22:41:45 查询 SELECT * FROM book where id=28
+2013-10-02 22:41:45 获取一条记录 SELECT * FROM book where id=28
+2013-10-02 22:41:45 查询 SELECT * FROM book where id<28 order by id desc limit 1
+2013-10-02 22:41:45 获取一条记录 SELECT * FROM book where id<28 order by id desc limit 1
+2013-10-02 22:41:45 查询 SELECT * FROM book where id>28 order by id asc limit 1
+2013-10-02 22:41:45 获取一条记录 SELECT * FROM book where id>28 order by id asc limit 1
+2013-10-02 22:41:45 释放结果集
+2013-10-02 22:41:45 完成整个查询任务,所用时间为0.0031089782714844
+2013-10-02 22:41:47 查询 SELECT * FROM book where id=27
+2013-10-02 22:41:47 获取一条记录 SELECT * FROM book where id=27
+2013-10-02 22:41:47 查询 SELECT * FROM book where id<27 order by id desc limit 1
+2013-10-02 22:41:47 获取一条记录 SELECT * FROM book where id<27 order by id desc limit 1
+2013-10-02 22:41:47 查询 SELECT * FROM book where id>27 order by id asc limit 1
+2013-10-02 22:41:47 获取一条记录 SELECT * FROM book where id>27 order by id asc limit 1
+2013-10-02 22:41:47 释放结果集
+2013-10-02 22:41:47 完成整个查询任务,所用时间为0.0020730495452881
+2013-10-02 22:41:48 查询 SELECT * FROM book where id=26
+2013-10-02 22:41:48 获取一条记录 SELECT * FROM book where id=26
+2013-10-02 22:41:48 查询 SELECT * FROM book where id<26 order by id desc limit 1
+2013-10-02 22:41:48 获取一条记录 SELECT * FROM book where id<26 order by id desc limit 1
+2013-10-02 22:41:48 查询 SELECT * FROM book where id>26 order by id asc limit 1
+2013-10-02 22:41:48 获取一条记录 SELECT * FROM book where id>26 order by id asc limit 1
+2013-10-02 22:41:48 释放结果集
+2013-10-02 22:41:48 完成整个查询任务,所用时间为0.0041649341583252
+2013-10-02 22:41:49 查询 SELECT * FROM book where id=25
+2013-10-02 22:41:49 获取一条记录 SELECT * FROM book where id=25
+2013-10-02 22:41:49 查询 SELECT * FROM book where id<25 order by id desc limit 1
+2013-10-02 22:41:49 获取一条记录 SELECT * FROM book where id<25 order by id desc limit 1
+2013-10-02 22:41:49 查询 SELECT * FROM book where id>25 order by id asc limit 1
+2013-10-02 22:41:49 获取一条记录 SELECT * FROM book where id>25 order by id asc limit 1
+2013-10-02 22:41:49 释放结果集
+2013-10-02 22:41:49 完成整个查询任务,所用时间为0.0042450428009033
+2013-10-02 22:41:50 查询 SELECT * FROM book where id=24
+2013-10-02 22:41:50 获取一条记录 SELECT * FROM book where id=24
+2013-10-02 22:41:50 查询 SELECT * FROM book where id<24 order by id desc limit 1
+2013-10-02 22:41:50 获取一条记录 SELECT * FROM book where id<24 order by id desc limit 1
+2013-10-02 22:41:50 查询 SELECT * FROM book where id>24 order by id asc limit 1
+2013-10-02 22:41:50 获取一条记录 SELECT * FROM book where id>24 order by id asc limit 1
+2013-10-02 22:41:50 释放结果集
+2013-10-02 22:41:50 完成整个查询任务,所用时间为0.00484299659729
+2013-10-02 22:41:51 查询 SELECT * FROM book where id=23
+2013-10-02 22:41:51 获取一条记录 SELECT * FROM book where id=23
+2013-10-02 22:41:51 查询 SELECT * FROM book where id<23 order by id desc limit 1
+2013-10-02 22:41:51 获取一条记录 SELECT * FROM book where id<23 order by id desc limit 1
+2013-10-02 22:41:51 查询 SELECT * FROM book where id>23 order by id asc limit 1
+2013-10-02 22:41:51 获取一条记录 SELECT * FROM book where id>23 order by id asc limit 1
+2013-10-02 22:41:51 释放结果集
+2013-10-02 22:41:51 完成整个查询任务,所用时间为0.0042219161987305
+2013-10-02 22:41:52 查询 SELECT * FROM book where id=22
+2013-10-02 22:41:52 获取一条记录 SELECT * FROM book where id=22
+2013-10-02 22:41:52 查询 SELECT * FROM book where id<22 order by id desc limit 1
+2013-10-02 22:41:52 获取一条记录 SELECT * FROM book where id<22 order by id desc limit 1
+2013-10-02 22:41:52 查询 SELECT * FROM book where id>22 order by id asc limit 1
+2013-10-02 22:41:52 获取一条记录 SELECT * FROM book where id>22 order by id asc limit 1
+2013-10-02 22:41:52 释放结果集
+2013-10-02 22:41:52 完成整个查询任务,所用时间为0.0042190551757812
+2013-10-02 22:41:54 查询 SELECT * FROM book where id=21
+2013-10-02 22:41:54 获取一条记录 SELECT * FROM book where id=21
+2013-10-02 22:41:54 查询 SELECT * FROM book where id<21 order by id desc limit 1
+2013-10-02 22:41:54 获取一条记录 SELECT * FROM book where id<21 order by id desc limit 1
+2013-10-02 22:41:54 查询 SELECT * FROM book where id>21 order by id asc limit 1
+2013-10-02 22:41:54 获取一条记录 SELECT * FROM book where id>21 order by id asc limit 1
+2013-10-02 22:41:54 释放结果集
+2013-10-02 22:41:54 完成整个查询任务,所用时间为0.0043020248413086
+2013-10-02 22:41:56 查询 SELECT * FROM book where id=20
+2013-10-02 22:41:56 获取一条记录 SELECT * FROM book where id=20
+2013-10-02 22:41:56 查询 SELECT * FROM book where id<20 order by id desc limit 1
+2013-10-02 22:41:56 获取一条记录 SELECT * FROM book where id<20 order by id desc limit 1
+2013-10-02 22:41:56 查询 SELECT * FROM book where id>20 order by id asc limit 1
+2013-10-02 22:41:56 获取一条记录 SELECT * FROM book where id>20 order by id asc limit 1
+2013-10-02 22:41:56 释放结果集
+2013-10-02 22:41:56 完成整个查询任务,所用时间为0.0019938945770264
+2013-10-02 22:41:57 查询 SELECT * FROM book where id=19
+2013-10-02 22:41:57 获取一条记录 SELECT * FROM book where id=19
+2013-10-02 22:41:57 查询 SELECT * FROM book where id<19 order by id desc limit 1
+2013-10-02 22:41:57 获取一条记录 SELECT * FROM book where id<19 order by id desc limit 1
+2013-10-02 22:41:57 查询 SELECT * FROM book where id>19 order by id asc limit 1
+2013-10-02 22:41:57 获取一条记录 SELECT * FROM book where id>19 order by id asc limit 1
+2013-10-02 22:41:57 释放结果集
+2013-10-02 22:41:57 完成整个查询任务,所用时间为0.0027790069580078
+2013-10-02 22:41:58 查询 SELECT * FROM book where id=20
+2013-10-02 22:41:58 获取一条记录 SELECT * FROM book where id=20
+2013-10-02 22:41:58 查询 SELECT * FROM book where id<20 order by id desc limit 1
+2013-10-02 22:41:58 获取一条记录 SELECT * FROM book where id<20 order by id desc limit 1
+2013-10-02 22:41:58 查询 SELECT * FROM book where id>20 order by id asc limit 1
+2013-10-02 22:41:58 获取一条记录 SELECT * FROM book where id>20 order by id asc limit 1
+2013-10-02 22:41:58 释放结果集
+2013-10-02 22:41:58 完成整个查询任务,所用时间为0.0014758110046387
+2013-10-02 22:41:59 查询 SELECT * FROM book where id=19
+2013-10-02 22:41:59 获取一条记录 SELECT * FROM book where id=19
+2013-10-02 22:41:59 查询 SELECT * FROM book where id<19 order by id desc limit 1
+2013-10-02 22:41:59 获取一条记录 SELECT * FROM book where id<19 order by id desc limit 1
+2013-10-02 22:41:59 查询 SELECT * FROM book where id>19 order by id asc limit 1
+2013-10-02 22:41:59 获取一条记录 SELECT * FROM book where id>19 order by id asc limit 1
+2013-10-02 22:41:59 释放结果集
+2013-10-02 22:41:59 完成整个查询任务,所用时间为0.0031912326812744
+2013-10-02 22:42:01 查询 SELECT * FROM book where id=18
+2013-10-02 22:42:01 获取一条记录 SELECT * FROM book where id=18
+2013-10-02 22:42:01 查询 SELECT * FROM book where id<18 order by id desc limit 1
+2013-10-02 22:42:01 获取一条记录 SELECT * FROM book where id<18 order by id desc limit 1
+2013-10-02 22:42:01 查询 SELECT * FROM book where id>18 order by id asc limit 1
+2013-10-02 22:42:01 获取一条记录 SELECT * FROM book where id>18 order by id asc limit 1
+2013-10-02 22:42:01 释放结果集
+2013-10-02 22:42:01 完成整个查询任务,所用时间为0.0039780139923096
+2013-10-02 22:42:02 查询 SELECT * FROM book where id=17
+2013-10-02 22:42:02 获取一条记录 SELECT * FROM book where id=17
+2013-10-02 22:42:02 查询 SELECT * FROM book where id<17 order by id desc limit 1
+2013-10-02 22:42:02 获取一条记录 SELECT * FROM book where id<17 order by id desc limit 1
+2013-10-02 22:42:02 查询 SELECT * FROM book where id>17 order by id asc limit 1
+2013-10-02 22:42:02 获取一条记录 SELECT * FROM book where id>17 order by id asc limit 1
+2013-10-02 22:42:02 释放结果集
+2013-10-02 22:42:02 完成整个查询任务,所用时间为0.0040638446807861
+2013-10-02 22:42:03 查询 SELECT * FROM book where id=16
+2013-10-02 22:42:03 获取一条记录 SELECT * FROM book where id=16
+2013-10-02 22:42:03 查询 SELECT * FROM book where id<16 order by id desc limit 1
+2013-10-02 22:42:03 获取一条记录 SELECT * FROM book where id<16 order by id desc limit 1
+2013-10-02 22:42:03 查询 SELECT * FROM book where id>16 order by id asc limit 1
+2013-10-02 22:42:03 获取一条记录 SELECT * FROM book where id>16 order by id asc limit 1
+2013-10-02 22:42:03 释放结果集
+2013-10-02 22:42:03 完成整个查询任务,所用时间为0.0046839714050293
+2013-10-02 22:42:06 查询 SELECT * FROM book where id=15
+2013-10-02 22:42:06 获取一条记录 SELECT * FROM book where id=15
+2013-10-02 22:42:06 查询 SELECT * FROM book where id<15 order by id desc limit 1
+2013-10-02 22:42:06 获取一条记录 SELECT * FROM book where id<15 order by id desc limit 1
+2013-10-02 22:42:06 查询 SELECT * FROM book where id>15 order by id asc limit 1
+2013-10-02 22:42:06 获取一条记录 SELECT * FROM book where id>15 order by id asc limit 1
+2013-10-02 22:42:06 释放结果集
+2013-10-02 22:42:06 完成整个查询任务,所用时间为0.0034749507904053
+2013-10-02 22:42:06 查询 SELECT * FROM book where id=14
+2013-10-02 22:42:06 获取一条记录 SELECT * FROM book where id=14
+2013-10-02 22:42:06 查询 SELECT * FROM book where id<14 order by id desc limit 1
+2013-10-02 22:42:06 获取一条记录 SELECT * FROM book where id<14 order by id desc limit 1
+2013-10-02 22:42:06 查询 SELECT * FROM book where id>14 order by id asc limit 1
+2013-10-02 22:42:06 获取一条记录 SELECT * FROM book where id>14 order by id asc limit 1
+2013-10-02 22:42:06 释放结果集
+2013-10-02 22:42:06 完成整个查询任务,所用时间为0.0040900707244873
+2013-10-02 22:42:08 查询 SELECT * FROM book where id=13
+2013-10-02 22:42:08 获取一条记录 SELECT * FROM book where id=13
+2013-10-02 22:42:08 查询 SELECT * FROM book where id<13 order by id desc limit 1
+2013-10-02 22:42:08 获取一条记录 SELECT * FROM book where id<13 order by id desc limit 1
+2013-10-02 22:42:08 查询 SELECT * FROM book where id>13 order by id asc limit 1
+2013-10-02 22:42:08 获取一条记录 SELECT * FROM book where id>13 order by id asc limit 1
+2013-10-02 22:42:08 释放结果集
+2013-10-02 22:42:08 完成整个查询任务,所用时间为0.0023481845855713
+2013-10-02 22:42:10 查询 SELECT * FROM book where id=12
+2013-10-02 22:42:10 获取一条记录 SELECT * FROM book where id=12
+2013-10-02 22:42:10 查询 SELECT * FROM book where id<12 order by id desc limit 1
+2013-10-02 22:42:10 获取一条记录 SELECT * FROM book where id<12 order by id desc limit 1
+2013-10-02 22:42:10 查询 SELECT * FROM book where id>12 order by id asc limit 1
+2013-10-02 22:42:10 获取一条记录 SELECT * FROM book where id>12 order by id asc limit 1
+2013-10-02 22:42:10 释放结果集
+2013-10-02 22:42:10 完成整个查询任务,所用时间为0.0037119388580322
+2013-10-02 22:42:12 查询 SELECT * FROM book where id=11
+2013-10-02 22:42:12 获取一条记录 SELECT * FROM book where id=11
+2013-10-02 22:42:12 查询 SELECT * FROM book where id<11 order by id desc limit 1
+2013-10-02 22:42:12 获取一条记录 SELECT * FROM book where id<11 order by id desc limit 1
+2013-10-02 22:42:12 查询 SELECT * FROM book where id>11 order by id asc limit 1
+2013-10-02 22:42:12 获取一条记录 SELECT * FROM book where id>11 order by id asc limit 1
+2013-10-02 22:42:12 释放结果集
+2013-10-02 22:42:12 完成整个查询任务,所用时间为0.0042128562927246
+2013-10-02 22:42:14 查询 SELECT * FROM book where id=10
+2013-10-02 22:42:14 获取一条记录 SELECT * FROM book where id=10
+2013-10-02 22:42:14 查询 SELECT * FROM book where id<10 order by id desc limit 1
+2013-10-02 22:42:14 获取一条记录 SELECT * FROM book where id<10 order by id desc limit 1
+2013-10-02 22:42:14 查询 SELECT * FROM book where id>10 order by id asc limit 1
+2013-10-02 22:42:14 获取一条记录 SELECT * FROM book where id>10 order by id asc limit 1
+2013-10-02 22:42:14 释放结果集
+2013-10-02 22:42:14 完成整个查询任务,所用时间为0.0027060508728027
+2013-10-02 22:42:15 查询 SELECT * FROM book where id=9
+2013-10-02 22:42:15 获取一条记录 SELECT * FROM book where id=9
+2013-10-02 22:42:15 查询 SELECT * FROM book where id<9 order by id desc limit 1
+2013-10-02 22:42:15 获取一条记录 SELECT * FROM book where id<9 order by id desc limit 1
+2013-10-02 22:42:15 查询 SELECT * FROM book where id>9 order by id asc limit 1
+2013-10-02 22:42:15 获取一条记录 SELECT * FROM book where id>9 order by id asc limit 1
+2013-10-02 22:42:15 释放结果集
+2013-10-02 22:42:15 完成整个查询任务,所用时间为0.0035400390625
+2013-10-02 22:42:17 查询 SELECT * FROM book ORDER BY ID DESC LIMIT 0,12
+2013-10-02 22:42:17 获取全部记录 SELECT * FROM book ORDER BY ID DESC LIMIT 0,12
+2013-10-02 22:42:17 查询 SELECT COUNT(*) AS num FROM book
+2013-10-02 22:42:17 获取一条记录 SELECT COUNT(*) AS num FROM book
+2013-10-02 22:42:17 释放结果集
+2013-10-02 22:42:17 完成整个查询任务,所用时间为0.0042829513549805
+2013-10-02 22:42:22 查询 SELECT * FROM book ORDER BY ID DESC LIMIT 12,12
+2013-10-02 22:42:22 获取全部记录 SELECT * FROM book ORDER BY ID DESC LIMIT 12,12
+2013-10-02 22:42:22 查询 SELECT COUNT(*) AS num FROM book
+2013-10-02 22:42:22 获取一条记录 SELECT COUNT(*) AS num FROM book
+2013-10-02 22:42:22 释放结果集
+2013-10-02 22:42:22 完成整个查询任务,所用时间为0.0023598670959473
+2013-10-02 22:47:41 查询 SELECT * FROM book ORDER BY ID DESC LIMIT 12,12
+2013-10-02 22:47:41 获取全部记录 SELECT * FROM book ORDER BY ID DESC LIMIT 12,12
+2013-10-02 22:47:41 查询 SELECT COUNT(*) AS num FROM book
+2013-10-02 22:47:41 获取一条记录 SELECT COUNT(*) AS num FROM book
+2013-10-02 22:47:41 释放结果集
+2013-10-02 22:47:41 完成整个查询任务,所用时间为0.0027401447296143
