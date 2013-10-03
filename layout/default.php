@@ -26,7 +26,7 @@
                     <ul class="nav">
                         <li <?php if($atype=="home"):?> class="active" <?php endif;?>><a href="index.php">Library</a></li>
                         <li <?php if($atype=="downloads"):?> class="active" <?php endif;?>><a href="index.php?a=downloads">Downloads</a></li>
-                        <li><a href="javascript:void(0);">Projects</a></li>
+                        <li <?php if($atype=="projects"):?> class="active" <?php endif;?>><a href="index.php?a=projects">Projects</a></li>
                         <li><a href="javascript:void(0);">About</a></li>
                         <li><a href="javascript:void(0);">Contact</a></li>
                     </ul>

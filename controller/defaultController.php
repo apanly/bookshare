@@ -50,6 +50,10 @@ class defaultController extends Controller
         return $this->render("default");
     }
 
+    public function projectsAction(){
+        $this->atype="projects";
+        return $this->render("default");
+    }
     /**
      * 没有获取价格的地方
      */
