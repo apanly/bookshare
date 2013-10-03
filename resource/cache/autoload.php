@@ -8,6 +8,7 @@ return array (
   'File' => '/home/vincent/opensource/library/resource/class/File.class.php',
   'util' => '/home/vincent/opensource/library/resource/class/util.class.php',
   'Mysql' => '/home/vincent/opensource/library/resource/class/Mysql.class.php',
+  'innerimage' => '/home/vincent/opensource/library/resource/class/innerimage.class.php',
   'Controller' => '/home/vincent/opensource/library/sdk/core/Controller.class.php',
   'icache' => '/home/vincent/opensource/library/sdk/core/icache.class.php',
   'View' => '/home/vincent/opensource/library/sdk/core/View.class.php',

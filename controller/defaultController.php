@@ -17,6 +17,7 @@ class defaultController extends Controller
             if(mb_strlen($item['title'],"utf-8")>15){
                 $item['title']=mb_substr($item['title'],0,15,"utf-8")."...";
             }
+            $item['image_url']=innerimage::getImage($item['image_url']);
             $bookinfo[$key]=$item;
         }
         $this->data=$bookinfo;
@@ -118,7 +119,7 @@ class defaultController extends Controller
     {
         $returnval=array();
         $url = "http://www.bbbao.com/prod?cat_id=10&gtin=0{$code}&query={$code}&browse_id=";
-        file_put_contents("/var/www/test.log",$url);
+        file_put_contents("/var/www/test.log",date("Y-m-d H:i:s")."=>".$url,FILE_APPEND);
         $httptarget = new Httplib();
         $response = $httptarget->get($url);
         if ($response) {

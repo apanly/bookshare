@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="<?php echo util::getConfig('description', 'global');?>"/>
     <meta name="keywords" content="<?php echo util::getConfig('keywords', 'global');?>"/>
+    <script src="static/js/jquery.min.js"></script>
     <!-- Le styles -->
     <link href="static/css/bootstrap.min.css" rel="stylesheet">
     <link href="static/css/common.css" rel="stylesheet">
@@ -54,7 +55,6 @@
 <!-- Le javascript
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
-<script src="static/js/jquery.min.js"></script>
 <script src="static/js/bootstrap.min.js"></script>
 </body>
 </html>
