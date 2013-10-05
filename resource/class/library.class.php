@@ -48,7 +48,7 @@ class library{
 
 
     public function getList($from,$limit){
-        $sql="SELECT * FROM book ORDER BY ID DESC LIMIT {$from},{$limit}";
+        $sql="SELECT * FROM book ORDER BY clicknum desc,id asc  DESC LIMIT {$from},{$limit}";
         return $this->target->get_all($sql);
     }
 
