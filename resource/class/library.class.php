@@ -18,6 +18,12 @@ class library{
     public function updateBook($fields,$isbn){
         $this->target->update("book",$fields," isbn='{$isbn}'");
     }
+
+    public function updateBookById($id){
+        $sql="update book set clicknum = clicknum+1 where  id={$id}";
+        $this->target->query($sql);
+    }
+
     public function findByISBN($isbn){
        $sql="SELECT * FROM book where isbn='{$isbn}'";
        $result=$this->target->get_one($sql);

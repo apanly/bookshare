@@ -21,3 +21,15 @@ if(window && window.console!=undefined){
     window.console.log("快使用ShareBook");
     window.console.log("人人为我,我为人人,我们,可以影响世界");
 }
+function GetRequest() {
+    var url = location.search; //获取url中"?"符后的字串
+    var theRequest = new Object();
+    if (url.indexOf("?") != -1) {
+        var str = url.substr(1);
+        strs = str.split("&");
+        for(var i = 0; i < strs.length; i ++) {
+            theRequest[strs[i].split("=")[0]]=unescape(strs[i].split("=")[1]);
+        }
+    }
+    return theRequest;
+}

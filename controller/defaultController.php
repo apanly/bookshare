@@ -54,6 +54,14 @@ class defaultController extends Controller
         return $this->render("default");
     }
 
+    public function viewAction(){
+        $id=$_POST['id'];
+        if(preg_match("/^[1-9]\d*$/",$id)){
+            $target=new library();
+            $target->updateBookById($id);
+        }
+    }
+
     public function aboutAction(){
         $this->atype="about";
         return $this->render("default");
@@ -131,7 +139,7 @@ class defaultController extends Controller
     {
         $returnval=array();
         $url = "http://www.bbbao.com/prod?cat_id=10&gtin=0{$code}&query={$code}&browse_id=";
-        file_put_contents("/var/www/test.log",date("Y-m-d H:i:s")."=>".$url,FILE_APPEND);
+        file_put_contents("/var/www/test.log",date("Y-m-d H:i:s")."=>".$url."\n",FILE_APPEND);
         $httptarget = new Httplib();
         $response = $httptarget->get($url);
         if ($response) {
@@ -154,5 +162,17 @@ class defaultController extends Controller
             }
         }
         return $returnval;
+    }
+
+    /**
+     * http://developers.douban.com/wiki/?title=book_v2#get_isbn_book
+     */
+    public function testAction(){
+        $uri="https://api.douban.com/v2/book/isbn/:9787111213826";
+        $httptarget = new Httplib();
+        $response = $httptarget->get($uri);
+        $data=$response['body'];
+        $data=json_decode($data,true);
+        var_dump($data);
     }
 }

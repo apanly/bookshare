@@ -1,3 +1,4 @@
+<script src="static/js/detail.js"></script>
 <div class="row-fluid">
     <ul class="pager">
         <?php if($bookprev):?>

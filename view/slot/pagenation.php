@@ -7,7 +7,7 @@
             <?php endif;?>
             <?php for($p=1;$p<=$pagecnt;$p++):?>
                <?php if($page==$p):?>
-                <li><a href="javascript:void(0);"><?php echo $p;?></a></li>
+                   <li class="active"><a href="javascript:void(0);"><?php echo $p;?></a></li>
                <?php else:?>
                     <li><a href="<?php echo $uri;?>&page=<?php echo $p;?>"><?php echo $p;?></a></li>
                <?php endif;?>
