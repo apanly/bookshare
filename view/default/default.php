@@ -7,7 +7,7 @@
         <?php endif;?>
                 <li class="span4">
                     <div class="thumbnail">
-                        <img title="<?php echo $item['title'];?>" src="<?php echo $item['image_url'];?>"  style="width: 250px; height: 300px;"/>
+                        <img title="<?php echo $item['title'];?>" src="<?php echo $item['image_url'];?>"  style="width: 250px; height: 300px;" hrefsrc="index.php?a=bookdetail&id=<?php echo $item['id'];?>"/>
                             <div class="caption">
                             <h4><?php echo $item['title'];?></h4>
                             <p><?php echo $item['creator'];?></p>

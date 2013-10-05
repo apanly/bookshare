@@ -19,7 +19,7 @@
 <body>
 <div class="container">
     <div class="masthead">
-        <h3 class="muted">ShareBook&nbsp;&nbsp;以书会友</h3>
+        <h3 class="muted"><img src="static/img/top.png"/></h3>
         <div class="navbar">
             <div class="navbar-inner">
                 <div class="container">
@@ -27,8 +27,7 @@
                         <li <?php if($atype=="home"):?> class="active" <?php endif;?>><a href="index.php">Library</a></li>
                         <li <?php if($atype=="downloads"):?> class="active" <?php endif;?>><a href="index.php?a=downloads">Downloads</a></li>
                         <li <?php if($atype=="projects"):?> class="active" <?php endif;?>><a href="index.php?a=projects">Projects</a></li>
-                        <li><a href="javascript:void(0);">About</a></li>
-                        <li><a href="javascript:void(0);">Contact</a></li>
+                        <li <?php if($atype=="about"):?> class="active" <?php endif;?>><a href="index.php?a=about">About</a></li>
                     </ul>
                 </div>
             </div>
@@ -56,5 +55,6 @@
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
 <script src="static/js/bootstrap.min.js"></script>
+<script src="static/js/common.js"></script>
 </body>
 </html>

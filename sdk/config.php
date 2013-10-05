@@ -1,6 +1,10 @@
 <?php
 $config = array();
-$config['global'] = array("sitename" => "以书会友--你有一本书,我有一本书,我们就有两本书");
+$config['global'] = array(
+    "sitename" => "以书会友--你有一本书,我有一本书,我们就有两本书",
+    "description"=>"分享书籍,助人为乐,一起分享快乐学习时光",
+    "keywords"=>"分享书籍,sharebook,以书会友"
+);
 $config['mvc']['default'] = array("action" => "default", "layout" => "default", "controller" => "default");
 $config['secury'] = array(
     "cookiepre" => "vincent_" . substr(md5("/|"), 0, 4) . "_",

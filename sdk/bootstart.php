@@ -6,17 +6,20 @@ define("DS",DIRECTORY_SEPARATOR);
 define("IN_WEB", "1");
 define("ROOT_PATH", realpath(dirname(__FILE__) . "/../") . DS);
 define("UPLOAD_PATH", realpath(dirname(__FILE__) . "/../") . DS."static".DS);
-define("IMG_PREFIX","http://opensource.com/library/static/");
+
 $domain = $_SERVER['HTTP_HOST'];
 if (!preg_match("/^http/", $domain)) {
     define("WEB_DOMAIN", "http://" . $domain);
 } else {
     define("WEB_DOMAIN", $domain);
 }
+define("IMG_PREFIX",WEB_DOMAIN."/library/static/");
 define("SLOT_PATH", ROOT_PATH . "view".DS."slot".DS);
 define("AUTOPATH", ROOT_PATH . "resource".DS."cache".DS."autoload.php");
 include(ROOT_PATH . "sdk".DS."function.php");
 include(ROOT_PATH . "sdk".DS."config.php");
+include(ROOT_PATH . "etc".DS."config.php");
+include(ROOT_PATH . "etc".DS."constant.php");
 $_GET = util::dstripslashes($_GET);
 $_POST = util::dstripslashes($_POST);
 $_COOKIE = util::dstripslashes($_COOKIE);

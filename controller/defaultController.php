@@ -18,6 +18,8 @@ class defaultController extends Controller
                 $item['title']=mb_substr($item['title'],0,15,"utf-8")."...";
             }
             $item['image_url']=innerimage::getImage($item['image_url']);
+            $tmpcreator=explode("(",$item['creator']);
+            $item['creator']=$tmpcreator[0];
             $bookinfo[$key]=$item;
         }
         $this->data=$bookinfo;
@@ -38,6 +40,7 @@ class defaultController extends Controller
         }
         $bookprev=$booktarget->getPrevById($id);
         $booknext=$booktarget->getNextById($id);
+        $bookinfo['image_url']=innerimage::getImage($bookinfo['image_url']);
         $this->book=$bookinfo;
         $this->bookprev=$bookprev;
         $this->booknext=$booknext;
@@ -47,9 +50,14 @@ class defaultController extends Controller
 
     public function downloadsAction(){
         $this->atype="downloads";
+        $this->envirment=ENVIRMENT;
         return $this->render("default");
     }
 
+    public function aboutAction(){
+        $this->atype="about";
+        return $this->render("default");
+    }
     public function projectsAction(){
         $this->atype="projects";
         return $this->render("default");
