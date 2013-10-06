@@ -11,7 +11,7 @@ class userinfo
     }
     public function getUserByUsername($username){
         $username=mysql_real_escape_string($username);
-        $sql="SELECT * FROM userinfo where username='{$username}'";
+        $sql="SELECT id,username FROM userinfo where username='{$username}'";
         $result=$this->target->get_one($sql);
         return $result;
     }
@@ -20,7 +20,7 @@ class userinfo
         $username=mysql_real_escape_string($username);
         $pwd=md5(serialize($pwd));
         $pwd=mysql_real_escape_string($pwd);
-        $sql="SELECT * FROM userinfo where username='{$username}' and pwd='{$pwd}'";
+        $sql="SELECT id,username FROM userinfo where username='{$username}' and pwd='{$pwd}'";
         $result=$this->target->get_one($sql);
         return $result;
     }

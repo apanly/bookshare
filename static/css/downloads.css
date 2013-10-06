@@ -1,5 +1,5 @@
 .imageRotation{
-    height:350px;
+    height:400px;
     width:350px;
     overflow:hidden;  /*--超出容器的所有元素都不可见--*/
     position:relative;  /*--相对定位--*/
@@ -37,14 +37,14 @@
 /*-------------图片容器---------------*/
 .imageBox{
     position:absolute;  /*--固定定位--*/
-    height:350px;
+    height:400px;
     top:0px;
     left:0px;
     overflow:hidden;
 }
 .imageBox img {
     display:block;
-    height:350px;
+    height:400px;
     width:350px;
     float:left;
     border:none;
@@ -88,7 +88,7 @@
     position:absolute;  /*--固定定位--*/
     bottom:14px;
     right:15px;
-    width:76px;
+    width:90px;
     height:12px;
     text-align:center;
     line-height:40px;

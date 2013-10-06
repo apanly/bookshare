@@ -1,6 +1,13 @@
 <?php
 class defaultController extends Controller
 {
+    public function __construct(){
+        $uid=$_COOKIE['uid'];
+        $username=$_COOKIE['username'];
+        if($uid && $username){
+            $this->logstatus=1;
+        }
+    }
     public function defaultAction(){
         $pageSize=12;
         $page=$_GET['page']?(int)($_GET['page']):1;
@@ -71,10 +78,16 @@ class defaultController extends Controller
         return $this->render("default");
     }
     public function loginAction(){
-        $this->atype="login";
+        if($this->logstatus==1){
+            $this->location("index.php");
+        }
         return $this->render("default");
     }
-
+    public function logOutAction(){
+        $this->clearUserStatus();
+        $this->logstatus=0;
+        $this->location("index.php");
+    }
     public function doregAction(){
         $returnval=array("code"=>0,"message"=>"fail");
         $username=trim($_POST['username']);
@@ -94,6 +107,7 @@ class defaultController extends Controller
                 $res=$fields;
                 $returnval['code']=1;
                 $returnval['message']=$res;
+                $this->setLoginStatus($uid,$username);
             }else{
                 $returnval['message']="用户名已经被注册了!!";
             }
@@ -112,10 +126,21 @@ class defaultController extends Controller
             if($res){
                 $returnval['code']=1;
                 $returnval['message']=$res;
+                $this->setLoginStatus($res['id'],$res['username']);
             }
         }
         file_put_contents("/var/www/test.log","\r\n".serialize($returnval),FILE_APPEND);
         return  json_encode($returnval);exit();
+    }
+
+    private function setLoginStatus($id,$username){
+        setcookie("uid",$id);
+        setcookie("username",$username);
+    }
+
+    private function clearUserStatus(){
+        setcookie("uid","");
+        setcookie("username","");
     }
     /**
      * 没有获取价格的地方
@@ -131,13 +156,14 @@ class defaultController extends Controller
             $bookinfo = $booktarget->findByISBN($code);
             if (empty($bookinfo)) {
                         $data=$this->spidercontent($code,$type);
+                        $data['uid']=$uid;
                         $booktarget->insertBook($data);
                         $returnval = $data;
             } else {
                 if(empty($bookinfo['name'])){
                     $data=$this->spidercontent($code,$type);
                     unset($data['isbn']);
-                    $booktarget->updateBook($data,$code);
+                    $booktarget->updateBook($data,$code,$uid);
                     $returnval = $data;
                 }else{
                     $returnval = $bookinfo;

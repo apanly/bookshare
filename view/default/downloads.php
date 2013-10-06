@@ -6,16 +6,28 @@
             <div class="preNext pre"><img src="static/img/pre.png" /></div>
             <div class="preNext next"><img src="static/img/next.png" /></div>
             <div class="imageBox">
-                <a href="http://www.itxueyuan.org" target="_blank"><img src="static/img/scanbefore.png" /></a>
-                <a href="http://www.itxueyuan.org" target="_blank"><img src="static/img/scanafter.png" /></a>
+                <a href="javascript:void(0);" target="_blank"><img src="static/img/sblogin.png" /></a>
+                <a href="javascript:void(0);" target="_blank"><img src="static/img/sblogout.png" /></a>
+                <a href="javascript:void(0);" target="_blank"><img src="static/img/scanbefore.png" /></a>
+                <a href="javascript:void(0);" target="_blank"><img src="static/img/scaning.png" /></a>
+                <a href="javascript:void(0);" target="_blank"><img src="static/img/scanafter1.png" /></a>
+                <a href="javascript:void(0);" target="_blank"><img src="static/img/scanafter.png" /></a>
             </div>
             <div class="titleBox">
-                <p class="active"><span>扫描前截图</span></p>
+                <p class="active"><span>登录截图</span></p>
+                <p>注册截图</p>
+                <p>扫描前截图</p>
+                <p>扫描中截图</p>
+                <p>扫描后提交数据截图</p>
                 <p>扫描后截图</p>
             </div>
             <div class="icoBox">
                 <span class="active" rel="1">1</span>
                 <span rel="2">2</span>
+                <span rel="3">3</span>
+                <span rel="4">4</span>
+                <span rel="5">5</span>
+                <span rel="6">6</span>
             </div>
         </div>
     </div>

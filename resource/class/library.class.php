@@ -15,8 +15,8 @@ class library{
         $this->target->insert("book",$fields);
     }
 
-    public function updateBook($fields,$isbn){
-        $this->target->update("book",$fields," isbn='{$isbn}'");
+    public function updateBook($fields,$isbn,$uid){
+        $this->target->update("book",$fields," isbn='{$isbn}' and uid={$uid}");
     }
 
     public function updateBookById($id){

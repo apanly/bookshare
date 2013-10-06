@@ -14,7 +14,7 @@ CREATE TABLE `book` (
   `clicknum` int(10) NOT NULL DEFAULT '0',
   `uid` int(10) NOT NULL,
    PRIMARY KEY (`id`),
-   UNIQUE KEY `isbn` (`isbn`),
+   UNIQUE KEY `isbn` (`isbn`,`uid`),
    KEY `clicknum` (`clicknum`),
    KEY `uid` (`uid`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci

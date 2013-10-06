@@ -28,7 +28,7 @@ $(document).ready(function() {
                 isEnd=0;
                 var imageSpeedLong=imageSpeed>=titleSpeed*2 ? true : false; // 判断图片动画执行时间长还是标题动画执行时间长
                 if(clickID){ nextID = clickID; }
-                else{ nextID=activeID<=1 ? activeID+1 : 1; }
+                else{ nextID=activeID<=6 ? activeID+1 : 1; }
                 // 交换图标
                 $(icoArr[activeID-1]).removeClass("active");
                 $(icoArr[nextID-1]).addClass("active");

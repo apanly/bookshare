@@ -28,8 +28,24 @@
                         <li <?php if($atype=="downloads"):?> class="active" <?php endif;?>><a href="index.php?a=downloads">Downloads</a></li>
                         <li <?php if($atype=="projects"):?> class="active" <?php endif;?>><a href="index.php?a=projects">Projects</a></li>
                         <li <?php if($atype=="about"):?> class="active" <?php endif;?>><a href="index.php?a=about">About</a></li>
-                        <li <?php if($atype=="login"):?> class="active" <?php endif;?>><a href="index.php?a=login">Login</a></li>
                     </ul>
+                    <?php if($logstatus==1):?>
+                    <ul class="nav pull-right">
+                        <li class="divider-vertical"></li>
+                        <li class="dropdown">
+                            <a data-toggle="dropdown" class="dropdown-toggle" href="javascript:void(0);">Setting<b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="javascript:void(0);">Info</a></li>
+                                <li><a href="index.php?a=logOut">LogOut</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <?php else:?>
+                    <ul class="nav pull-right">
+                        <li class="divider-vertical"></li>
+                        <li><a href="index.php?a=login">Login</a></li>
+                    </ul>
+                    <?php endif;?>
                 </div>
             </div>
         </div><!-- /.navbar -->
