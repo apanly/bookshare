@@ -4,6 +4,7 @@ return array (
   'log' => '/home/vincent/opensource/library/resource/class/log.class.php',
   'dcookie' => '/home/vincent/opensource/library/resource/class/dcookie.class.php',
   'getDirFile' => '/home/vincent/opensource/library/resource/class/getDirFile.class.php',
+  'userinfo' => '/home/vincent/opensource/library/resource/class/userinfo.class.php',
   'library' => '/home/vincent/opensource/library/resource/class/library.class.php',
   'File' => '/home/vincent/opensource/library/resource/class/File.class.php',
   'util' => '/home/vincent/opensource/library/resource/class/util.class.php',

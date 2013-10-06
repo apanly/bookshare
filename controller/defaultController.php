@@ -70,6 +70,53 @@ class defaultController extends Controller
         $this->atype="projects";
         return $this->render("default");
     }
+    public function loginAction(){
+        $this->atype="login";
+        return $this->render("default");
+    }
+
+    public function doregAction(){
+        $returnval=array("code"=>0,"message"=>"fail");
+        $username=trim($_POST['username']);
+        $pwd=trim($_POST['password']);
+        $roles=trim($_POST['status']);
+        if($username && $pwd && $roles){
+            $usertarget=new userinfo();
+            $res=$usertarget->getUserByUsername($username);
+            if(!$res){
+                $fields=array(
+                    "username"=>$username,
+                    "pwd"=>md5(serialize($pwd)),
+                    "roles"=>$roles
+                );
+                $uid=$usertarget->insertuser($fields);
+                $fields['id']=$uid;
+                $res=$fields;
+                $returnval['code']=1;
+                $returnval['message']=$res;
+            }else{
+                $returnval['message']="用户名已经被注册了!!";
+            }
+
+        }
+        return  json_encode($returnval);exit();
+    }
+
+    public function dologinAction(){
+        $returnval=array("code"=>0,"message"=>"fail");
+        $username=trim($_POST['username']);
+        $pwd=trim($_POST['password']);
+        if($username && $pwd){
+            $usertarget=new userinfo();
+            $res=$usertarget->checkLogin($username,$pwd);
+            if($res){
+                $returnval['code']=1;
+                $returnval['message']=$res;
+            }
+        }
+        file_put_contents("/var/www/test.log","\r\n".serialize($returnval),FILE_APPEND);
+        return  json_encode($returnval);exit();
+    }
     /**
      * 没有获取价格的地方
      */
@@ -78,7 +125,8 @@ class defaultController extends Controller
         $returnval = array();
         $code = $_REQUEST['code'];
         $type = $_REQUEST['type'];
-        if ($code) {
+        $uid=$_REQUEST['uid'];
+        if ($code && $uid>0) {
             $booktarget = new library();
             $bookinfo = $booktarget->findByISBN($code);
             if (empty($bookinfo)) {

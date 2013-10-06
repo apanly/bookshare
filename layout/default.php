@@ -28,6 +28,7 @@
                         <li <?php if($atype=="downloads"):?> class="active" <?php endif;?>><a href="index.php?a=downloads">Downloads</a></li>
                         <li <?php if($atype=="projects"):?> class="active" <?php endif;?>><a href="index.php?a=projects">Projects</a></li>
                         <li <?php if($atype=="about"):?> class="active" <?php endif;?>><a href="index.php?a=about">About</a></li>
+                        <li <?php if($atype=="login"):?> class="active" <?php endif;?>><a href="index.php?a=login">Login</a></li>
                     </ul>
                 </div>
             </div>

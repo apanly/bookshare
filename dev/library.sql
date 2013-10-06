@@ -12,7 +12,18 @@ CREATE TABLE `book` (
   `image_url` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `lrdate` date NOT NULL,
   `clicknum` int(10) NOT NULL DEFAULT '0',
+  `uid` int(10) NOT NULL,
    PRIMARY KEY (`id`),
    UNIQUE KEY `isbn` (`isbn`),
-   KEY `clicknum` (`clicknum`)
+   KEY `clicknum` (`clicknum`),
+   KEY `uid` (`uid`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci
+
+CREATE TABLE `userinfo` (
+ `id` int(10) NOT NULL AUTO_INCREMENT,
+ `username` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
+ `pwd` varchar(64) COLLATE utf8_unicode_ci NOT NULL,
+ `roles` int(1) NOT NULL,
+ PRIMARY KEY (`id`),
+ KEY `username` (`username`,`pwd`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci
