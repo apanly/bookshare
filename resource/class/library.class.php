@@ -24,6 +24,13 @@ class library{
         $this->target->query($sql);
     }
 
+    public function updateBookFlagById($id,$flag,$orderid,$booknum){
+        if($booknum){
+            $sql="update book set flag ={$flag},rentor='{$orderid}',booknumber=booknumber+({$booknum})  where  id={$id}";
+        }
+        $this->target->query($sql);
+    }
+
     public function findByISBN($isbn){
        $sql="SELECT * FROM book where isbn='{$isbn}'";
        $result=$this->target->get_one($sql);
@@ -31,7 +38,7 @@ class library{
     }
 
     public function findById($id){
-        $sql="SELECT * FROM book where id={$id}";
+        $sql="SELECT * FROM book as a ,bookdetail as b where a.id=b.bookid and a.id={$id}";
         $result=$this->target->get_one($sql);
         return $result;
     }
@@ -47,17 +54,47 @@ class library{
     }
 
 
-    public function getList($from,$limit){
-        $sql="SELECT * FROM book ORDER BY clicknum desc,id asc  LIMIT {$from},{$limit}";
+
+    public function getList($from,$limit,$bookname=''){
+        if($bookname==''){
+            $condition=" ";
+        }else{
+            $condition=" where lower(title) like '%{$bookname}%'";
+        }
+        $sql="SELECT * FROM book   {$condition} ORDER BY id asc  LIMIT {$from},{$limit}";
         return $this->target->get_all($sql);
     }
 
-    public function getBookCount(){
-        $sql="SELECT COUNT(*) AS num FROM book";
+
+    public function getHotBookList($pageSize=3){
+        $sql="SELECT * FROM book  ORDER BY clicknum desc  LIMIT {$pageSize}";
+        return $this->target->get_all($sql);
+    }
+
+    public function getBookCount($bookname=''){
+        if($bookname==''){
+            $condition=" ";
+        }else{
+            $condition=" where lower(name) like '%{$bookname}%'";
+        }
+        $sql="SELECT COUNT(*) AS num  FROM book  {$condition} ";
         $res=$this->target->get_one($sql);
         if($res){
             return $res['num'];
         }
         return 0;
+    }
+
+
+    public function updateBookDetail($id,$fields){
+        $this->target->update("book",$fields," id={$id}");
+    }
+
+    public function saveBookRecord($content){
+       return  $this->target->insert("draftrecord",
+        array(
+            "content"=>$content,
+            "idate"=>date("Y-m-d")
+        ));
     }
 }

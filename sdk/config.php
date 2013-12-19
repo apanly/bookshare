@@ -21,3 +21,13 @@ $config['db'][0] = array(
     "log" => 1, //开启日志
     "logfilepath" => ROOT_PATH."resource/cache/dblog.txt" //开启日志
 );
+$config['db'][1] = array(
+    "hostname" => "localhost", //服务器地址
+    "username" => "root", //数据库用户名
+    "password" => "root", //数据库密码
+    "database" => "appenglish", //数据库名称
+    "charset" => "utf8", //数据库编码
+    "pconnect" => 0, //开启持久连接
+    "log" => 1, //开启日志
+    "logfilepath" => ROOT_PATH."resource/cache/dblog.txt" //开启日志
+);

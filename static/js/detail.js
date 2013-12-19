@@ -6,10 +6,9 @@ if(/^\d*$/.test(bookid)){
     $.ajax({
         type:"POST",
         url:"index.php?a=view",
-        data:"id="+bookid,
+        data:"id="+bookid+"&flag="+ $.trim($("#bookdetail").val()),
         dataType:'json',
         success:function (response) {
-
         }
     });
 }

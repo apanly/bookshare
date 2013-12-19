@@ -28,15 +28,22 @@
                         <li <?php if($atype=="downloads"):?> class="active" <?php endif;?>><a href="index.php?a=downloads">Downloads</a></li>
                         <li <?php if($atype=="projects"):?> class="active" <?php endif;?>><a href="index.php?a=projects">Projects</a></li>
                         <li <?php if($atype=="about"):?> class="active" <?php endif;?>><a href="index.php?a=about">About</a></li>
+                        <li><a href="http://yyabc.org">YYABC</a></li>
+                        <li><a href="http://blog.yyabc.org">IH</a></li>
                     </ul>
+                    <form action="index.php" class="navbar-search pull-left">
+                        <input name="bookname" type="text" placeholder="输入书籍名称" class="search-query span2">
+                    </form>
                     <?php if($logstatus==1):?>
                     <ul class="nav pull-right">
+                        <li><a href="javascript:void(0);"><?php echo $userinfo['uname'];?></a></li>
                         <li class="divider-vertical"></li>
                         <li class="dropdown">
                             <a data-toggle="dropdown" class="dropdown-toggle" href="javascript:void(0);">Setting<b class="caret"></b></a>
                             <ul class="dropdown-menu">
+                                <li><a href="index.php?c=tools">knapsack</a></li>
                                 <li><a href="javascript:void(0);">Info</a></li>
-                                <li><a href="index.php?a=logOut">LogOut</a></li>
+                                <li><a href="index.php?a=logout">LogOut</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -56,8 +63,8 @@
         <div class="row-fluid">
                 <div class="span4">
                     <p>
-                        ShareBook  &copy; Vincentguo<br/>
-                        QQ:364054110<br/>
+                        ShareBook  &copy; 狂神<br/>
+                        QQ:1586538192<br/>
                         Sina Weibo:<a href="http://www.weibo.com/qyclass/" target="_blank">Follow Me</a>
                         Email:Vincentguo@anjuke.com
                     </p>

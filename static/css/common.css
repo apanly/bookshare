@@ -40,3 +40,17 @@ li{
     margin-bottom: 15px;
     padding: 7px 9px;
 }
+.rent{
+    position: absolute;
+    top:230px;
+    left:150px;
+}
+.bookimg{
+    height: 500px;
+    width: 349px;
+}
+.bookqrcode{
+    position: absolute;
+    top:0px;
+    left:0px;
+}

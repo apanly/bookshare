@@ -11,7 +11,8 @@
                 <li>项目名称:家居声控系统</li>
                 <li>开发语言:Python</li>
                 <li>项目目的:开发一个全智能的语音识别机器人,控制家电并执行指令集</li>
-                <li>Git地址:<a href="https://github.com/apanly/piRobot">View</a>(https://github.com/apanly/piRobot)</li>
+                <li>Git地址:<a href="<?php echo $prouris[0];?>">View</a>(<?php echo $prouris[0];?></li>
+                <li><img src="<?php echo $prourisqrcode[0];?>"/></li>
             </ul>
         </div>
     </div>
@@ -29,7 +30,8 @@
                 <li>项目名称:家居红外控制系统</li>
                 <li>开发语言:Python</li>
                 <li>项目目的:开本模块是一个服务,专门用户接受客户端发送的遥控命令,可以控制电视,空调</li>
-                <li>Git地址:<a href="https://github.com/apanly/piInfrated">View</a>(https://github.com/apanly/piInfrated)</li>
+                <li>Git地址:<a href="<?php echo $prouris[1];?>">View</a>(<?php echo $prouris[1];?>)</li>
+                <li><img src="<?php echo $prourisqrcode[1];?>"/></li>
             </ul>
         </div>
     </div>
@@ -47,7 +49,8 @@
                 <li>项目名称:文本纠错与lucene全文搜索服务</li>
                 <li>开发语言:java</li>
                 <li>项目目的:一个服务,主要为PiRobot提供服务</li>
-                <li>Git地址:<a href="https://github.com/apanly/javaproofread">View</a>(https://github.com/apanly/javaproofread)</li>
+                <li>Git地址:<a href="<?php echo $prouris[2];?>">View</a>(<?php echo $prouris[2];?>)</li>
+                <li><img src="<?php echo $prourisqrcode[2];?>"/></li>
             </ul>
         </div>
     </div>
@@ -65,7 +68,8 @@
                 <li>项目名称:红外命令发送客户端</li>
                 <li>开发语言:HTML+PHP</li>
                 <li>项目目的:手机遥控器</li>
-                <li>Git地址:<a href="https://github.com/apanly/RemoterUI">View</a>(https://github.com/apanly/RemoterUI)</li>
+                <li>Git地址:<a href="<?php echo $prouris[3];?>">View</a>(<?php echo $prouris[3];?>)</li>
+                <li><img src="<?php echo $prourisqrcode[3];?>"/></li>
             </ul>
         </div>
     </div>
@@ -83,7 +87,8 @@
                 <li>项目名称:手机控制PPT</li>
                 <li>开发语言:Python+ZMQ</li>
                 <li>项目目的:移动演讲PPT</li>
-                <li>Git地址:<a href="https://github.com/apanly/pccontrolerserver">View</a>(https://github.com/apanly/pccontrolerserver)</li>
+                <li>Git地址:<a href="<?php echo $prouris[4];?>">View</a>(<?php echo $prouris[4];?>)</li>
+                <li><img src="<?php echo $prourisqrcode[4];?>"/></li>
             </ul>
         </div>
     </div>
@@ -101,7 +106,8 @@
                 <li>项目名称:手机控制PPT</li>
                 <li>开发语言:HTML+PHP+ZMQ</li>
                 <li>项目目的:移动演讲PPT</li>
-                <li>Git地址:<a href="https://github.com/apanly/pccontrollerclinet">View</a>(https://github.com/apanly/pccontrollerclinet)</li>
+                <li>Git地址:<a href="<?php echo $prouris[5];?>">View</a>(<?php echo $prouris[5];?>)</li>
+                <li><img src="<?php echo $prourisqrcode[5];?>"/></li>
             </ul>
         </div>
     </div>

@@ -10,14 +10,52 @@
     </ul>
 </div>
 <div class="row-fluid">
-    <div class="span4">
-        <img src="<?php echo $book['image_url'];?>"/>
+    <div class="span4" style="position: relative;">
+        <img src="<?php echo $book['image_url'];?>" class="bookimg"/>
+        <?php if($book['rentor']):?>
+            <img src="static/img/rent.png" class="rent"/>
+        <?php endif;?>
+            <img src="<?php echo $book['qrcodeimage_url'];?>" style="position: absolute;bottom:5px;right:30px;"/>
     </div>
     <div class="span8">
-        <h3><?php echo $book['name'];?></h3>
-        <h4>作者:<?php echo $book['creator'];?></h4>
+        <h3><?php echo $book['name'];?>
+            <?php if($logstatus && $book['booknumber']):?>
+                <button class="btn btn-primary btn-large borrowbook" style="float: right;" data="<?php echo $book['id'];?>">借阅</button>
+            <?php endif;?>
+        </h3>
+        <h4>作者:<?php echo $book['creator'];?><input type="hidden" id="bookdetail" value="<?php echo $getbookdetail;?>"></h4>
+        <h4>库存:<?php echo $book['booknumber'];?></h4>
         <h4>装订:<?php echo $book['binding']."/".$book['pages']."页";?></h4>
         <h4>出版社:<?php echo $book['publisher']."(".$book['pdate'].")";?></h4>
+        <h4>ISBN:<?php echo $book['isbn'];?></h4>
+        <h4>Tag:<?php echo $book['booktag'];?></h4>
+        <h4>简介:<?php echo $book['booksummary'];?></h4>
+        <?php if($orderlist):?>
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>借阅人</th>
+                <th>借阅时间</th>
+                <th>状态</th>
+            </tr>
+            </thead>
+            <tbody>
+                <?php foreach($orderlist as $item):?>
+            <tr>
+                <td><a target="_blank" href="index.php?uid=<?php echo $item['uid'];?>"><?php echo $item['uname'];?></a></td>
+                <td><?php echo $item['rentData'];?></td>
+                <td>
+                    <?php if($item['flag']==1):?>
+                        借阅中
+                    <?php elseif($item['flag']==2):?>
+                        已归还
+                    <?php endif;?>
+                </td>
+            </tr>
+                <?php endforeach;?>
+            </tbody>
+        </table>
+        <?php endif;?>
     </div>
 </div>
 <div class="row-fluid">

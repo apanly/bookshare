@@ -33,3 +33,49 @@ function GetRequest() {
     }
     return theRequest;
 }
+
+var booltools={
+
+    borrow:function(bookid,target){
+        $.ajax({
+            type:"POST",
+            url:"index.php?a=borrowBook",
+            data:{'bookid':bookid},
+            dataType:'json',
+            success:function (response) {
+                alert(response.message);
+                if(response.code==1){
+                    $(target).hide();
+                    window.location.href="index.php?c=tools";
+                }
+            }
+        });
+    },
+    rebackbook:function(orderid,bookid){
+        $.ajax({
+            type:"POST",
+            url:"index.php?c=tools&a=rebackbook",
+            data:{'bookid':bookid,"orderid":orderid},
+            dataType:'json',
+            success:function (response) {
+                alert(response.message);
+                if(response.code==1){
+                    window.location.href=window.location.href;
+                }
+            }
+        });
+    }
+}
+$(document).ready(function(){
+    $(".borrowbook").each(function(){
+        $(this).click(function(){
+            booltools.borrow($(this).attr("data"),this);
+        });
+    });
+    $(".rebackbook").each(function(){
+        $(this).click(function(){
+            var tmp=$(this).attr("data").split(",");
+            booltools.rebackbook(tmp[0],tmp[1]);
+        });
+    });
+});

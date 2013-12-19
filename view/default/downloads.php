@@ -34,7 +34,10 @@
     <div class="span8">
         <h3>ShareBook Android App</h3>
         <h4>所有ShareBook的书籍都是通过此App扫描上架的,EveryOne都可以将自己的爱书扫描到我们的书库,分享给有需要的人</h4>
-        <h4>ShareBook App:<a href="static/download/ShareBook_<?php echo $envirment;?>.apk" target="_blank">Down It</a></h4>
-        <h4>ZXing App(开源扫描App):<a href="https://zxing.googlecode.com/files/BarcodeScanner4.5.apk" target="_blank">Down It</a></h4>
+        <h4>ShareBook App:<a href="<?php echo $downapks[0];?>" target="_blank">Down It</a> </h4>
+        <h4>ZXing App(开源扫描App):<a href="<?php echo $downapks[1];?>" target="_blank">Down It</a></h4>
+        <h4>扫描下载:<br/>
+            <img src="<?php echo $downapksqrcode[0];?>"/><img src="<?php echo $downapksqrcode[1];?>"/>
+        </h4>
     </div>
 </div>
