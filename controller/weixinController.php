@@ -1,8 +1,8 @@
 <?php
 class weixinController extends Controller
 {
-   private $appid="wxbc00883339fb7a7f";
-   private $appseckey="8d426e4f3a7f1571a2db10b26705230f";
+   private $appid=APPID;
+   private $appseckey=APPSECKEY;
     public function defaultAction(){
         echo $this->resMsg();
         $this->writeLog();
@@ -33,7 +33,7 @@ class weixinController extends Controller
                 $contentStr=$this->searchbook($str_q);
                 break;
             case "br":
-                $contentStr=$this->saveBookRecord($str_q);
+                $contentStr=$this->saveBookRecord($str_q,$fromUsername);
                 break;
             case "bl":
                 $type="multi";
@@ -138,11 +138,13 @@ class weixinController extends Controller
         }
         return $contentStr;
     }
-    private function saveBookRecord($content){
+    private function saveBookRecord($content,$openid){
         $booktarget=new library();
-        $contentStr="临时读书笔记保存成功,请到book.yyabc.org查看";
-        if(!$booktarget->saveBookRecord($content)){
+        if(!$booktarget->saveBookRecord($content,$openid)){
             $contentStr="临时读书笔记保存失败";
+        }else{
+            $recordid=$booktarget->getBookRecordId();
+            $contentStr="临时读书笔记保存成功,请到http://book.yyabc.org/?a=br&id={$recordid}查看";
         }
         return $contentStr;
     }
@@ -202,7 +204,7 @@ class weixinController extends Controller
         $help=<<<EOT
 服务分三部分
 图书服务
-bs--搜索数据
+bs--搜索书籍
 bl--热门书籍列表
 br--记录读书笔记\n
 英语社区服务
@@ -262,9 +264,12 @@ EOT;
     }
 
     public function testAction(){
+        $url = "http://www.cnblogs.com/zemliu/";
+        $short = shorturl::short($url);
+        print_r($short);exit();
         $arr = array(
-            'account' => 'xxx',
-            'password' => 'xxx'
+            'account' => WXUSER,
+            'password' => WXPASS
         );
         $w = new weixin($arr);
         var_dump($w->getAllUserInfo());//获取所有用户信息

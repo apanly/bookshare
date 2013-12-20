@@ -90,11 +90,15 @@ class library{
         $this->target->update("book",$fields," id={$id}");
     }
 
-    public function saveBookRecord($content){
+    public function saveBookRecord($content,$opendid=''){
        return  $this->target->insert("draftrecord",
         array(
             "content"=>$content,
+            'openid'=>$opendid,
             "idate"=>date("Y-m-d")
         ));
+    }
+    public function getBookRecordId(){
+        return $this->target->insert_id();
     }
 }

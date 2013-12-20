@@ -9,5 +9,8 @@
 ![书籍列表](https://raw.github.com/apanly/bookshare/master/static/img/show.png)
 ![App下载页面](https://raw.github.com/apanly/bookshare/master/static/img/downshow.png)
 
+#参考资料
+http://www.cnblogs.com/zhuqil/p/3456312.html
+
 #Copying
 ###Free use of this software is granted under the terms of the GNU Lesser General Public License (LGPL)

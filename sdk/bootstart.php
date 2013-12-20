@@ -19,6 +19,7 @@ define("AUTOPATH", ROOT_PATH . "resource".DS."cache".DS."autoload.php");
 include(ROOT_PATH . "sdk".DS."function.php");
 include(ROOT_PATH . "sdk".DS."config.php");
 include(ROOT_PATH . "etc".DS."config.php");
+include(ROOT_PATH . "etc".DS."const.php");
 $_GET = util::dstripslashes($_GET);
 $_POST = util::dstripslashes($_POST);
 $_COOKIE = util::dstripslashes($_COOKIE);
