@@ -25,7 +25,7 @@
                 <div class="container">
                     <ul class="nav">
                         <li <?php if($atype=="home"):?> class="active" <?php endif;?>><a href="index.php">Library</a></li>
-                        <li <?php if($atype=="downloads"):?> class="active" <?php endif;?>><a href="index.php?a=downloads">Downloads</a></li>
+                        <li <?php if($atype=="Media"):?> class="active" <?php endif;?>><a href="index.php?a=media">Media</a></li>
                         <li <?php if($atype=="projects"):?> class="active" <?php endif;?>><a href="index.php?a=projects">Projects</a></li>
                         <li <?php if($atype=="about"):?> class="active" <?php endif;?>><a href="index.php?a=about">About</a></li>
                         <li><a href="http://yyabc.org">YYABC</a></li>

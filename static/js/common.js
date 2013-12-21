@@ -4,7 +4,10 @@ $(".thumbnail img").each(function(){
         this.src="static/img/bookerror.jpg";
     });
     $(this).click(function(){
-       window.location.href=$(this).attr("hrefsrc");
+       if($(this).attr("hrefsrc")){
+           window.location.href=$(this).attr("hrefsrc");
+       }
+
     });
 });
 $(".row-fluid .span4 img").each(function(){

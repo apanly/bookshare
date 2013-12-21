@@ -77,9 +77,51 @@ class defaultController extends Controller
         $this->atype="home";
         return $this->render("default");
     }
-
+    public function mediaAction(){
+        $pageSize=12;
+        $page=$_GET['page']?(int)($_GET['page']):1;
+        if($page<=0){
+            $page=1;
+        }
+        $pagefrom=($page-1)*$pageSize;
+        $lifetarget=new lifemedia();
+        $lifeinfo=$lifetarget->getlifeList($pagefrom,$pageSize);
+        $lifecnt=$lifetarget->getlifeCount();
+        $pagecnt=ceil($lifecnt/$pageSize);
+        $pageuri="index.php?a=media";
+        $this->pagelist=Slot::includeSlot("pagenation",array("uri"=>$pageuri,'page'=>$page,'pagecnt'=>$pagecnt));
+        foreach($lifeinfo as $key=>$item){
+            if($item['type']==1){
+                $lifeinfo[$key]['uri']=innerimage::getImage($item['content'],date("Y-m-d",strtotime($item['idate'])));
+            }
+            $lifeinfo[$key]['desc']="于".$item['idate']."在微信分享";
+        }
+        $this->data=$lifeinfo;
+        $this->pagercnt=count($lifeinfo);
+        $this->atype="Media";
+        return $this->render("default");
+    }
+    public function mediadetailAction(){
+        $id=$_GET['id']?(int)$_GET['id']:1;
+        if(!preg_match("/^[1-9]\d*$/",$id)){
+            $id=1;
+        }
+        $lifetarget=new lifemedia();
+        $lifeinfo=$lifetarget->findById($id);
+        if(empty($lifeinfo)){
+            $this->location("index.php?a=mediadetail");exit();
+        }
+        if($lifeinfo['type']==1){
+            $lifeinfo['uri']=innerimage::getImage($lifeinfo['content'],date("Y-m-d",strtotime($lifeinfo['idate'])));
+            $lifeinfo['desc']="于".$lifeinfo['idate']."在微信分享";
+            $lifeinfo['title']="图片分享";
+        }
+        $this->detailinfo=$lifeinfo;
+        $this->atype="Media";
+        return $this->render("default");
+    }
     public function downloadsAction(){
-        $this->atype="downloads";
+        $this->atype="about";
         $downapk0=WEB_DOMAIN."/static/download/ShareBook.apk";
         $downapk1="https://zxing.googlecode.com/files/BarcodeScanner4.5.apk";
         $this->downapks=array($downapk0,$downapk1);
@@ -220,7 +262,7 @@ class defaultController extends Controller
         setcookie("username","");
     }
     /**
-     * 没有获取价格的地方
+     * 没有获取价格的地方,目前看来还不需要价格，没什么用
      */
     public function scanAction()
     {

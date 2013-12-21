@@ -15,7 +15,7 @@
         <?php if($book['rentor']):?>
             <img src="static/img/rent.png" class="rent"/>
         <?php endif;?>
-            <img src="<?php echo $book['qrcodeimage_url'];?>" style="position: absolute;bottom:5px;right:30px;"/>
+            <img src="<?php echo $book['qrcodeimage_url'];?>" style="position: absolute;bottom:5px;left:30px;"/>
     </div>
     <div class="span8">
         <h3><?php echo $book['name'];?>

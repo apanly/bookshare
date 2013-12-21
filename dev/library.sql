@@ -58,4 +58,13 @@ CREATE TABLE `draftrecord` (
  `idate` date NOT NULL,
  PRIMARY KEY  (`id`),
  KEY `uid` (`uid`)
-) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci
+
+CREATE TABLE `lifemedia` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `content` varchar(255) DEFAULT NULL,
+  `idate` datetime DEFAULT NULL,
+  `openid` varchar(100) DEFAULT NULL,
+  `type` int(1) DEFAULT '1' COMMENT '1=>image,2=>audio,3=>video',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;

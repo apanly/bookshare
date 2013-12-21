@@ -22,10 +22,18 @@ class weixinController extends Controller
         $keyword= trim($postObj->Content);//获取消息内容
         $time= time(); //获取当前时间戳
         //---------- 返 回 数 据 ---------- //
-        $type="text";
-        if(strlen($keyword)>2){
-            $str_q=trim(substr($keyword,2));
-            $keyword=substr($keyword,0,2);
+        if($MsgType=="text"){
+            $type="text";
+            if(strlen($keyword)>2){
+                $str_q=trim(substr($keyword,2));
+                $keyword=substr($keyword,0,2);
+            }
+        }else if($MsgType=="image"){
+            $keyword=$MsgType;
+            $str_q=$postObj->PicUrl;
+        }else if($MsgType=="voice" || $MsgType="video"){
+            $keyword=$MsgType;
+            $str_q=$postObj->MediaId;
         }
         switch($keyword){
             case "bs":
@@ -48,6 +56,18 @@ class weixinController extends Controller
                 $contentStr=$this->getEngCRead();
                 break;
             case "ew":
+                break;
+            case "voice":
+                $mediatype=2;
+                $contentStr=$this->saveLiftMedia($str_q,$fromUsername,$mediatype);
+                break;
+            case "video":
+                $mediatype=3;
+                $contentStr=$this->saveLiftMedia($str_q,$fromUsername,$mediatype);
+                break;
+            case "image":
+                $mediatype=1;
+                $contentStr=$this->saveLiftMedia($str_q,$fromUsername,$mediatype);
                 break;
             default:
                 $contentStr=$this->Usage();
@@ -200,6 +220,19 @@ class weixinController extends Controller
         }
         return $contentStr;
     }
+    private function saveLiftMedia($imgUri,$openid,$type=1){
+            $sqldata=array();
+            $sqldata['photouri']=$imgUri;
+            $sqldata['idate']=date("Y-m-d H:i:s");
+            $sqldata['openid']=$openid;
+            $sqldata['type']=$type;
+            $phototarget=new lifemedia();
+            $contentStr="保存生活图片失败!";
+            if($phototarget->insert($sqldata)){
+                $contentStr="保存生活多媒体成功!";
+            }
+        return $contentStr;
+    }
     private  function Usage(){
         $help=<<<EOT
 服务分三部分
@@ -210,7 +243,9 @@ br--记录读书笔记\n
 英语社区服务
 eo--每日一句
 ec--双语阅读
-en--英语新闻
+en--英语新闻\n
+综合服务
+图片,音频,视频
 EOT;
     return $help;
     }
@@ -256,7 +291,7 @@ EOT;
     }
 
     private function writeLog(){
-        file_put_contents(ROOT_PATH."weixin.log",var_export($GLOBALS["HTTP_RAW_POST_DATA"],true),FILE_APPEND);
+        file_put_contents(ROOT_PATH.date("Ymd")."weixin.log",var_export($GLOBALS["HTTP_RAW_POST_DATA"],true),FILE_APPEND);
     }
 
     private function writeCustomLog($content){

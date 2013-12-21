@@ -12,7 +12,14 @@ class library{
         $this->target=new Mysql();
     }
     public function insertBook($fields){
+        $bookdetail=array();
+        $bookdetail['booksummary']=$fields['booksummary'];
+        $bookdetail['booktag']=$fields['booktag'];
+        unset($fields['booksummary']);
+        unset($fields['booktag']);
         $this->target->insert("book",$fields);
+        $bookdetail['bookid']=$this->target->insert_id();
+        $this->target->insert("bookdetail",$bookdetail);
     }
 
     public function updateBook($fields,$isbn,$uid){
