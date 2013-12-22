@@ -12,7 +12,7 @@ class lifemedia {
         $this->target=new Mysql();
     }
     public function insert($params){
-        $this->target->insert("lifemedia",$params);
+       return $this->target->insert("lifemedia",$params);
     }
 
     public function getlifeList($from,$limit){

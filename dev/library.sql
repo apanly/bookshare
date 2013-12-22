@@ -68,3 +68,21 @@ CREATE TABLE `lifemedia` (
   `type` int(1) DEFAULT '1' COMMENT '1=>image,2=>audio,3=>video',
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+CREATE TABLE `msgqueue` (
+ `msgid` int(10) NOT NULL AUTO_INCREMENT,
+ `openid` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+ `content` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+ `msgtime` int(10) NOT NULL,
+ `msgtype` int(1) NOT NULL,
+ `fakeid` int(10) NOT NULL,
+ `queueflag` int(1) NOT NULL DEFAULT '0' COMMENT '0=>not,1=>done',
+ `wxmsgid` int(10) NOT NULL,
+ PRIMARY KEY (`msgid`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci
+
+CREATE TABLE `user_relation` (
+ `openid` varchar(64) COLLATE utf8_unicode_ci NOT NULL,
+ `fakeid` int(10) NOT NULL,
+ `uid` int(10) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;

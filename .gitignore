@@ -3,3 +3,5 @@ resource/cache/*
 etc/*
 .DS_Store
 static/.DS_Store
+.htaccess
+*.log

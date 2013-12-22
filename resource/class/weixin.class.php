@@ -140,7 +140,6 @@ class Weixin {
         foreach($this->userFakeid as $v){
             $info[] = $this->getUserInfo($v['groupid'],$v['fakeid']);
         }
-
         return $info;
     }
 
@@ -253,6 +252,20 @@ class Weixin {
         return $tmpInfo; // 返回数据
     }
 
+    public function getLastestMessage(){
+        ini_set('max_execution_time',600);
+        $pageSize = 100;
+        $this->referer = "https://mp.weixin.qq.com/cgi-bin/home?t=home/index&lang=zh_CN&token={$_SESSION['token']}";
+        $url = "https://mp.weixin.qq.com/cgi-bin/message?t=message/list&count={$pageSize}&day=7&token={$this->token}&lang=zh_CN";
+        $info = $this->vget($url);
+        $preg = "/{\"msg_item\":(.*?)\.msg_item/";
+        preg_match_all($preg,$info,$b);
+        if($b && $b[1]){
+            file_put_contents(ROOT_PATH."wx.log",$b[1][0]);
+            echo time();
+        }
+        exit();
+    }
 }
 
 ?>

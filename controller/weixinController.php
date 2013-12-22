@@ -21,9 +21,14 @@ class weixinController extends Controller
         $MsgType=$postObj->MsgType;
         $keyword= trim($postObj->Content);//获取消息内容
         $time= time(); //获取当前时间戳
-        //---------- 返 回 数 据 ---------- //
+        $type="text";
+        $msgqueue=array();
+        $msgqueue['openid']=$fromUsername;
+        $msgqueue['msgtime']=$postObj->CreateTime;
+        $msgqueue['queueflag']=0;
         if($MsgType=="text"){
-            $type="text";
+            $msgqueue['content']=$keyword;
+            $msgqueue['msgtype']=1;
             if(strlen($keyword)>2){
                 $str_q=trim(substr($keyword,2));
                 $keyword=substr($keyword,0,2);
@@ -31,10 +36,22 @@ class weixinController extends Controller
         }else if($MsgType=="image"){
             $keyword=$MsgType;
             $str_q=$postObj->PicUrl;
-        }else if($MsgType=="voice" || $MsgType="video"){
+            $msgqueue['content']=$str_q;
+            $msgqueue['msgtype']=2;
+        }else if($MsgType=="voice"){
             $keyword=$MsgType;
             $str_q=$postObj->MediaId;
+            $msgqueue['content']=$str_q;
+            $msgqueue['msgtype']=3;
+        }else if($MsgType=="video"){
+            $keyword=$MsgType;
+            $str_q=$postObj->MediaId;
+            $msgqueue['content']=$str_q;
+            $msgqueue['msgtype']=4;
         }
+        $msgqtarget=new msgqueue();
+        $msgqtarget->insert($msgqueue);
+        unset($msgqueue);
         switch($keyword){
             case "bs":
                 $type="multi";
@@ -220,16 +237,20 @@ class weixinController extends Controller
         }
         return $contentStr;
     }
-    private function saveLiftMedia($imgUri,$openid,$type=1){
+    private function saveLiftMedia($mediasrc,$openid,$type=1){
+            $contentStr="保存生活图片失败!";
+            if(!$mediasrc){
+                return $contentStr;
+            }
             $sqldata=array();
-            $sqldata['photouri']=$imgUri;
+            $sqldata['content']=$mediasrc;
             $sqldata['idate']=date("Y-m-d H:i:s");
             $sqldata['openid']=$openid;
             $sqldata['type']=$type;
-            $phototarget=new lifemedia();
-            $contentStr="保存生活图片失败!";
-            if($phototarget->insert($sqldata)){
-                $contentStr="保存生活多媒体成功!";
+            $lifetarget=new lifemedia();
+
+            if($lifetarget->insert($sqldata)){
+                $contentStr="保存生活多媒体成功!可以到http://book.yyabc.org/index.php?a=media查看";
             }
         return $contentStr;
     }
@@ -299,14 +320,12 @@ EOT;
     }
 
     public function testAction(){
-        $url = "http://www.cnblogs.com/zemliu/";
-        $short = shorturl::short($url);
-        print_r($short);exit();
         $arr = array(
             'account' => WXUSER,
             'password' => WXPASS
         );
         $w = new weixin($arr);
+        $w->getLastestMessage();
         var_dump($w->getAllUserInfo());//获取所有用户信息
         exit();
         $a = $w->sendMessage('群发内123123123容');

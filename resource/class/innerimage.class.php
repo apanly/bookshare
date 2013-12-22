@@ -6,12 +6,12 @@ class innerimage
         $filename=md5($uri);
         $fileroot=UPLOAD_PATH."bookpics".DS;
         if(!file_exists($fileroot)){
-            mkdir($fileroot,0700);
+            mkdir($fileroot,0705);
         }
         if($directory){
             $fileroot=$fileroot.$directory.DS;
             if(!file_exists($fileroot)){
-                mkdir($fileroot,0700);
+                mkdir($fileroot,0705);
             }
         }
         if(!file_exists($fileroot.$filename)){
