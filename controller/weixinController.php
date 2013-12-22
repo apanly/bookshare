@@ -75,12 +75,12 @@ class weixinController extends Controller
             case "ew":
                 break;
             case "voice":
-                $mediatype=2;
-                $contentStr=$this->saveLiftMedia($str_q,$fromUsername,$mediatype);
+                //$mediatype=2;
+                //$contentStr=$this->saveLiftMedia($str_q,$fromUsername,$mediatype);
                 break;
             case "video":
-                $mediatype=3;
-                $contentStr=$this->saveLiftMedia($str_q,$fromUsername,$mediatype);
+                //$mediatype=3;
+                //$contentStr=$this->saveLiftMedia($str_q,$fromUsername,$mediatype);
                 break;
             case "image":
                 $mediatype=1;

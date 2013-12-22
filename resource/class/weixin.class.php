@@ -84,7 +84,9 @@ class Weixin {
             }
         }
     }
-
+    public function getToken(){
+        return $this->token;
+    }
     //单发消息
     private function send($fakeid,$content){
         $url = 'https://mp.weixin.qq.com/cgi-bin/singlesend?t=ajax-response&lang=zh_CN';
@@ -252,19 +254,65 @@ class Weixin {
         return $tmpInfo; // 返回数据
     }
 
-    public function getLastestMessage(){
+    public function getLastestMessage($pageSize=100){
         ini_set('max_execution_time',600);
-        $pageSize = 100;
         $this->referer = "https://mp.weixin.qq.com/cgi-bin/home?t=home/index&lang=zh_CN&token={$_SESSION['token']}";
         $url = "https://mp.weixin.qq.com/cgi-bin/message?t=message/list&count={$pageSize}&day=7&token={$this->token}&lang=zh_CN";
         $info = $this->vget($url);
         $preg = "/{\"msg_item\":(.*?)\.msg_item/";
         preg_match_all($preg,$info,$b);
+        $msgdata=array();
         if($b && $b[1]){
-            file_put_contents(ROOT_PATH."wx.log",$b[1][0]);
-            echo time();
+            $msgdata=substr($b[1][0],0,-2);
+            $msgdata=json_decode($msgdata,true);
         }
-        exit();
+        return $msgdata;
+    }
+
+    public function downMultiMedia($msgid){
+        $uri="https://mp.weixin.qq.com/cgi-bin/downloadfile?msgid={$msgid}&source=&token={$this->token}";
+        $data=$this->fullvget($uri);
+        return $data;
+    }
+
+    private function fullvget($url){ // 模拟获取内容函数
+        $header = array(
+            'Accept:*/*',
+            'Accept-Encoding:gzip,deflate',
+            'Accept-Language:zh-CN,zh;q=0.8',
+            'Connection:keep-alive',
+            'Host:mp.weixin.qq.com',
+            'Referer:'.$this->referer,
+            'X-Requested-With:XMLHttpRequest'
+        );
+
+        $useragent = 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:23.0) Gecko/20100101 Firefox/23.0';
+        $curl = curl_init(); // 启动一个CURL会话
+        curl_setopt($curl, CURLOPT_URL, $url); // 要访问的地址
+        curl_setopt($curl, CURLOPT_HTTPHEADER, $header); //设置HTTP头字段的数组
+        curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, 0); // 对认证证书来源的检查
+        curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, 1); // 从证书中检查SSL加密算法是否存在
+        curl_setopt($curl, CURLOPT_USERAGENT, $useragent); // 模拟用户使用的浏览器
+        curl_setopt($curl, CURLOPT_FOLLOWLOCATION, 1); // 使用自动跳转
+        curl_setopt($curl, CURLOPT_AUTOREFERER, 1); // 自动设置Referer
+        curl_setopt($curl, CURLOPT_HTTPGET, 1); // 发送一个常规的GET请求
+        curl_setopt($curl, CURLOPT_COOKIE, $this->cookie); // 读取上面所储存的Cookie信息
+        curl_setopt($curl, CURLOPT_TIMEOUT, 30); // 设置超时限制防止死循环
+        curl_setopt($curl, CURLOPT_HEADER, $this->getHeader); // 显示返回的Header区域内容
+        curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1); // 获取的信息以文件流的形式返回
+        $tmpInfo = curl_exec($curl); // 执行操作
+        if (curl_errno($curl)) {
+            // echo 'Errno'.curl_error($curl);
+        }
+        $length = curl_getinfo($curl, CURLINFO_HEADER_SIZE);
+        curl_close($curl); // 关闭CURL会话
+        $headers = trim( substr($tmpInfo, 0, $length) );
+        $the_body = substr( $tmpInfo, $length);; // 返回数据
+        return array(
+            "header"=>$headers,
+            "body"=>$the_body,
+            "url"=>$url
+        );
     }
 }
 
