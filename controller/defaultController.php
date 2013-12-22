@@ -91,8 +91,16 @@ class defaultController extends Controller
         $pageuri="index.php?a=media";
         $this->pagelist=Slot::includeSlot("pagenation",array("uri"=>$pageuri,'page'=>$page,'pagecnt'=>$pagecnt));
         foreach($lifeinfo as $key=>$item){
+            $tmpuri=$item['content'];
+            $tmpdirectory=date("Y-m-d",strtotime($item['idate']));
             if($item['type']==1){
-                $lifeinfo[$key]['uri']=innerimage::getImage($item['content'],date("Y-m-d",strtotime($item['idate'])));
+                $lifeinfo[$key]['uri']=innerimage::getImage($tmpuri,$tmpdirectory);
+            }else{
+                $tmpmediatype=".mp4";
+                if($item['type']==2){
+                    $tmpmediatype=".mp3";
+                }
+                $lifeinfo[$key]['uri']=innerMedia::getvideo($tmpuri,$tmpdirectory,$tmpmediatype);
             }
             $lifeinfo[$key]['desc']="于".$item['idate']."在微信分享";
         }

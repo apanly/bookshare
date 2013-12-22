@@ -77,10 +77,12 @@ class weixinController extends Controller
             case "voice":
                 //$mediatype=2;
                 //$contentStr=$this->saveLiftMedia($str_q,$fromUsername,$mediatype);
+                $contentStr="感谢你使用微信记录生活!可以到http://book.yyabc.org/index.php?a=media查看";
                 break;
             case "video":
                 //$mediatype=3;
                 //$contentStr=$this->saveLiftMedia($str_q,$fromUsername,$mediatype);
+                $contentStr="感谢你使用微信记录生活!可以到http://book.yyabc.org/index.php?a=media查看";
                 break;
             case "image":
                 $mediatype=1;
