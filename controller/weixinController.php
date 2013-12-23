@@ -48,6 +48,9 @@ class weixinController extends Controller
             $str_q=$postObj->MediaId;
             $msgqueue['content']=$str_q;
             $msgqueue['msgtype']=4;
+        }else if($MsgType=="event"){
+            $keyword=$MsgType;
+            $str_q=$postObj->Event;
         }
         $msgqtarget=new msgqueue();
         $msgqtarget->insert($msgqueue);
@@ -87,6 +90,13 @@ class weixinController extends Controller
             case "image":
                 $mediatype=1;
                 $contentStr=$this->saveLiftMedia($str_q,$fromUsername,$mediatype);
+                break;
+            case "event":
+                if($str_q=="subscribe"){
+                    $contentStr=$this->eventUsage();
+                }else if($str_q=="unsubscribe"){
+                    $contentStr=$this->eventUsage();
+                }
                 break;
             default:
                 $contentStr=$this->Usage();
@@ -271,6 +281,18 @@ en--英语新闻\n
 图片,音频,视频
 EOT;
     return $help;
+    }
+
+    private function eventUsage(){
+        $help=<<<EOT
+欢迎关注心灵分享
+本站提供三个服务
+图书分享
+英语分享
+生活多媒体分享
+可以关注我们的网站 yyabc.org
+EOT;
+        return $help;
     }
     private function getAccessToken(){
         $accessToken=$this->GetCookie();
