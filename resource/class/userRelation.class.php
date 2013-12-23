@@ -20,6 +20,16 @@ class userRelation
         $sql="SELECT * FROM user_relation WHERE openid='{$openid}'";
         return $this->target->get_one($sql);
     }
+    public function getNotCompleteUser($limit=10){
+        $sql="SELECT * FROM user_relation WHERE flag=0 limit {$limit}";
+        return $this->target->get_one($sql);
+    }
+
+    public function updateUserInfo($params){
+        $fakeid=$params['fake_id'];
+        unset($params['fake_id']);
+        $this->target->update("user_relation",$params," fakeid={$fakeid} ");
+    }
 
     public function updateByOpenid($openid,$fakeid){
         $this->target->update("user_relation",array(

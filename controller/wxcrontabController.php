@@ -90,7 +90,44 @@ class wxcrontabController extends Controller
                }
            }
        }
-
+        public function getUserInfoAction(){
+            $userReTarget=new userRelation();
+            $notCompleteData=$userReTarget->getNotCompleteUser();
+            if($notCompleteData){
+                $arr = array(
+                    'account' => WXUSER,
+                    'password' => WXPASS
+                );
+                $w = new weixin($arr);
+                $userdata=$w->getAllUserInfo();
+                $wxuserdata=array();
+                if($userdata){
+                    foreach($userdata as $item){
+                        $tmpitem=json_decode($item,true);
+                        if($tmpitem['base_resp']['err_msg']=="ok"){
+                            $tmpcontact=$tmpitem['contact_info'];
+                            $wxuserdata[$tmpcontact['fake_id']]=array(
+                                "fake_id"=>$tmpcontact['fake_id'],
+                                "nick_name"=>$tmpcontact['nick_name'],
+                                "user_name"=>$tmpcontact['user_name'],
+                                "signature"=>$tmpcontact['signature'],
+                                "city"=>$tmpcontact['city'],
+                                "province"=>$tmpcontact['province'],
+                                "country"=>$tmpcontact['country'],
+                                "gender"=>$tmpcontact['gender']
+                            );
+                        }
+                    }
+                }
+                if($wxuserdata){
+                    foreach($notCompleteData as $notCompleteUser){
+                        if(isset($wxuserdata[$notCompleteUser['fakeid']])){
+                            $userReTarget->updateUserInfo($wxuserdata[$notCompleteUser['fakeid']]);
+                        }
+                    }
+                }
+            }
+        }
         private function findBestMatch($item,$msgdata){
             $returnVal=array();
             foreach($msgdata as $submsg){
