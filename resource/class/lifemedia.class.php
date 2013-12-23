@@ -15,13 +15,13 @@ class lifemedia {
        return $this->target->insert("lifemedia",$params);
     }
 
-    public function getlifeList($from,$limit){
-        $sql="SELECT * FROM lifemedia ORDER BY id desc  LIMIT {$from},{$limit}";
+    public function getlifeList($from,$limit,$type){
+        $sql="SELECT * FROM lifemedia where type={$type} ORDER BY id desc  LIMIT {$from},{$limit}";
         return $this->target->get_all($sql);
     }
 
-    public function getlifeCount(){
-        $sql="SELECT COUNT(*) AS num  FROM lifemedia ";
+    public function getlifeCount($type){
+        $sql="SELECT COUNT(*) AS num  FROM lifemedia where type={$type} ";
         $res=$this->target->get_one($sql);
         if($res){
             return $res['num'];

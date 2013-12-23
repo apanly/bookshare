@@ -94,7 +94,7 @@ class wxcrontabController extends Controller
         private function findBestMatch($item,$msgdata){
             $returnVal=array();
             foreach($msgdata as $submsg){
-                if($item['msgtype']==$submsg['type'] && $item['msgtime']==$submsg['date_time']){
+                if($item['msgtype']==$submsg['type'] && abs($item['msgtime']-$submsg['date_time'])<=2){
                     if($item['msgtype']==1){//文本
                         if($submsg['content']==$item['content']){
                             $returnVal=$submsg;

@@ -8,6 +8,13 @@
         audiojs.createAll();
     });
 </script>
+<div class="row-fluid">
+    <ul class="nav nav-tabs">
+        <li <?php if($type==1):?> class="active" <?php endif;?>><a href="index.php?a=media&type=1">图片</a></li>
+        <li <?php if($type==2):?> class="active" <?php endif;?>><a href="index.php?a=media&type=2">音频</a></li>
+        <li <?php if($type==3):?> class="active" <?php endif;?>><a href="index.php?a=media&type=3">视频</a></li>
+    </ul>
+</div>
 <?php echo $pagelist;?>
 <?php if($data):?>
     <?php foreach($data as $key=>$item):?>
@@ -20,7 +27,7 @@
                 <?php if($item['type']==1):?>
                     <img  src="<?php echo $item['uri'];?>"   hrefsrc="index.php?a=mediadetail&id=<?php echo $item['id'];?>"/>
                 <?php elseif($item['type']==3):?>
-                <video id="example_video_<?php echo $item['id'];?>" class="video-js vjs-default-skin" controls preload="auto"  poster="http://video-js.zencoder.com/oceans-clip.png" data-setup="{}" style="width:100%;">
+                <video id="example_video_<?php echo $item['id'];?>" class="video-js vjs-default-skin" controls preload="auto"  poster="static/img/video.png" data-setup="{}" style="width:100%;">
                     <source src="<?php echo $item['uri'];?>" type='video/mp4' />
                 </video>
                 <?php elseif($item['type']==2):?>

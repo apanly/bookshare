@@ -80,15 +80,19 @@ class defaultController extends Controller
     public function mediaAction(){
         $pageSize=12;
         $page=$_GET['page']?(int)($_GET['page']):1;
+        $type=$_GET['type']?(int)($_GET['type']):1;
         if($page<=0){
             $page=1;
         }
+        if($page<=0){
+            $type=1;
+        }
         $pagefrom=($page-1)*$pageSize;
         $lifetarget=new lifemedia();
-        $lifeinfo=$lifetarget->getlifeList($pagefrom,$pageSize);
-        $lifecnt=$lifetarget->getlifeCount();
+        $lifeinfo=$lifetarget->getlifeList($pagefrom,$pageSize,$type);
+        $lifecnt=$lifetarget->getlifeCount($type);
         $pagecnt=ceil($lifecnt/$pageSize);
-        $pageuri="index.php?a=media";
+        $pageuri="index.php?a=media&type={$type}";
         $this->pagelist=Slot::includeSlot("pagenation",array("uri"=>$pageuri,'page'=>$page,'pagecnt'=>$pagecnt));
         foreach($lifeinfo as $key=>$item){
             $tmpuri=$item['content'];
@@ -107,6 +111,10 @@ class defaultController extends Controller
         $this->data=$lifeinfo;
         $this->pagercnt=count($lifeinfo);
         $this->atype="Media";
+        $this->type=$type;
+        if($type==1){
+            Dispatcher::getInstance()->setAct("mediapic");
+        }
         return $this->render("default");
     }
     public function mediadetailAction(){
@@ -122,7 +130,7 @@ class defaultController extends Controller
         if($lifeinfo['type']==1){
             $lifeinfo['uri']=innerimage::getImage($lifeinfo['content'],date("Y-m-d",strtotime($lifeinfo['idate'])));
             $lifeinfo['desc']="于".$lifeinfo['idate']."在微信分享";
-            $lifeinfo['title']="图片分享";
+            $lifeinfo['title']="生活分享";
         }
         $this->detailinfo=$lifeinfo;
         $this->atype="Media";

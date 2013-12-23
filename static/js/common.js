@@ -7,7 +7,16 @@ $(".thumbnail img").each(function(){
        if($(this).attr("hrefsrc")){
            window.location.href=$(this).attr("hrefsrc");
        }
-
+    });
+});
+$("#picfluid img").each(function(){
+    $(this).bind("error",function(){
+        this.src="static/img/bookerror.jpg";
+    });
+    $(this).click(function(){
+        if($(this).attr("hrefsrc")){
+            window.location.href=$(this).attr("hrefsrc");
+        }
     });
 });
 $(".row-fluid .span4 img").each(function(){
