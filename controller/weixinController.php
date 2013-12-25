@@ -211,7 +211,7 @@ class weixinController extends Controller
                 $contentStr.="<Articles>";
                 foreach($data as $tmp){
                     $title=$tmp['content'];
-                    $url="http://book.yyabc.org/?a=br&id={$tmp['id']}";
+                    $url="http://book.yyabc.org/?a=br&id={$tmp['id']}&openid={$openid}";
                     $contentStr.="<item>
                     <Title><![CDATA[{$title}]]></Title>
                     <Description><![CDATA[{$title}]]></Description>

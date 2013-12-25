@@ -102,13 +102,19 @@ class library{
         array(
             "content"=>$content,
             'openid'=>$opendid,
-            "idate"=>date("Y-m-d")
+            "idate"=>date("Y-m-d H:i:s")
         ));
     }
     public function getnotelist($openid,$limit=3){
        $sql="SELECT * FROM draftrecord WHERE openid= '{$openid}' limit {$limit}";
        return $this->target->get_all($sql);
     }
+
+    public function getNoteById($id){
+        $sql="SELECT * FROM draftrecord WHERE id= {$id} ";
+        return $this->target->get_one($sql);
+    }
+
     public function getBookRecordId(){
         return $this->target->insert_id();
     }

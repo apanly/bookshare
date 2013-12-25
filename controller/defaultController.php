@@ -120,12 +120,12 @@ class defaultController extends Controller
     public function mediadetailAction(){
         $id=$_GET['id']?(int)$_GET['id']:1;
         if(!preg_match("/^[1-9]\d*$/",$id)){
-            $id=1;
+            $this->location("index.php?a=media");exit();
         }
         $lifetarget=new lifemedia();
         $lifeinfo=$lifetarget->findById($id);
         if(empty($lifeinfo)){
-            $this->location("index.php?a=mediadetail");exit();
+            $this->location("index.php?a=media");exit();
         }
         if($lifeinfo['type']==1){
             $lifeinfo['uri']=innerimage::getImage($lifeinfo['content'],date("Y-m-d",strtotime($lifeinfo['idate'])));
@@ -136,7 +136,22 @@ class defaultController extends Controller
         $this->atype="Media";
         return $this->render("default");
     }
-    
+
+    public function brAction(){
+        $id=$_GET['id']?(int)$_GET['id']:'';
+        $openid=$_GET['openid']?trim($_GET['opneid']):'';
+        if(!preg_match("/^[1-9]\d*$/",$id)){
+            $this->location("index.php?a=media");exit();
+        }
+        $booktarget=new library();
+        $info=$booktarget->getNoteById($id);
+        if(!$info){
+            $this->location("index.php?a=media");exit();
+        }
+        $this->data=$info;
+        return $this->render("default");
+    }
+
     public function downloadsAction(){
         $this->atype="about";
         $downapk0=WEB_DOMAIN."/static/download/ShareBook.apk";
