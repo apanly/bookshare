@@ -79,7 +79,7 @@ CREATE TABLE `msgqueue` (
  `queueflag` int(1) NOT NULL DEFAULT '0' COMMENT '0=>not,1=>done',
  `wxmsgid` int(10) NOT NULL,
  PRIMARY KEY (`msgid`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 CREATE TABLE `user_relation` (
  `openid` varchar(64) COLLATE utf8_unicode_ci NOT NULL,

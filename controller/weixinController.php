@@ -57,11 +57,19 @@ class weixinController extends Controller
         unset($msgqueue);
         switch($keyword){
             case "bs":
-                $type="multi";
-                $contentStr=$this->searchbook($str_q);
+                if($str_q){
+                    $type="multi";
+                    $contentStr=$this->searchbook($str_q);
+                }else{
+                    $contentStr="操作有误,bs后面需要有内容，例如 bs redis";
+                }
                 break;
             case "br":
-                $contentStr=$this->saveBookRecord($str_q,$fromUsername);
+                if($str_q){
+                    $contentStr=$this->saveBookRecord($str_q,$fromUsername);
+                }else{
+                    $contentStr="操作有误,br后面需要有内容，例如 br I love you!!";
+                }
                 break;
             case "bl":
                 $type="multi";
@@ -76,6 +84,7 @@ class weixinController extends Controller
                 $contentStr=$this->getEngCRead();
                 break;
             case "ew":
+                $contentStr="本服务暂未提供,敬请期待";
                 break;
             case "voice":
                 //$mediatype=2;
@@ -276,7 +285,7 @@ br--记录读书笔记\n
 英语社区服务
 eo--每日一句
 ec--双语阅读
-en--英语新闻\n
+ew--英语新闻\n
 综合服务
 图片,音频,视频
 EOT;
@@ -290,7 +299,8 @@ EOT;
 图书分享
 英语分享
 生活多媒体分享
-可以关注我们的网站 yyabc.org
+回复 ? 获取操作命令
+或者可以关注我们的网站 yyabc.org
 EOT;
         return $help;
     }

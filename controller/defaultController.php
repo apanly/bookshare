@@ -112,7 +112,7 @@ class defaultController extends Controller
         $this->pagercnt=count($lifeinfo);
         $this->atype="Media";
         $this->type=$type;
-        if($type==1){
+        if($type==1 && $_GET['test']==1){
             Dispatcher::getInstance()->setAct("mediapic");
         }
         return $this->render("default");
