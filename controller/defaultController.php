@@ -136,6 +136,7 @@ class defaultController extends Controller
         $this->atype="Media";
         return $this->render("default");
     }
+    
     public function downloadsAction(){
         $this->atype="about";
         $downapk0=WEB_DOMAIN."/static/download/ShareBook.apk";

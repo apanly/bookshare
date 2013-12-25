@@ -64,6 +64,10 @@ class weixinController extends Controller
                     $contentStr="操作有误,bs后面需要有内容，例如 bs redis";
                 }
                 break;
+            case "nl":
+                $type="multi";
+                $contentStr=$this->getnotelist($fromUsername);
+                break;
             case "br":
                 if($str_q){
                     $contentStr=$this->saveBookRecord($str_q,$fromUsername);
@@ -196,6 +200,29 @@ class weixinController extends Controller
         }
         return $contentStr;
     }
+    private function getnotelist($openid){
+        $booktarget=new library();
+        $data=$booktarget->getnotelist($openid,10);
+        $contentStr="";
+        if($data){
+            $datacnt=count($data);
+            if($data){
+                $contentStr.="<ArticleCount>{$datacnt}</ArticleCount>";
+                $contentStr.="<Articles>";
+                foreach($data as $tmp){
+                    $title=$tmp['content'];
+                    $url="http://book.yyabc.org/?a=br&id={$tmp['id']}";
+                    $contentStr.="<item>
+                    <Title><![CDATA[{$title}]]></Title>
+                    <Description><![CDATA[{$title}]]></Description>
+                    <Url><![CDATA[{$url}]]></Url>
+                    </item>";
+                }
+                $contentStr.="</Articles>";
+            }
+        }
+        return $contentStr;
+    }
     private function saveBookRecord($content,$openid){
         $booktarget=new library();
         if(!$booktarget->saveBookRecord($content,$openid)){
@@ -281,7 +308,8 @@ class weixinController extends Controller
 图书服务
 bs--搜索书籍
 bl--热门书籍列表
-br--记录读书笔记\n
+br--记录临时笔记
+nl--临时笔记列表\n
 英语社区服务
 eo--每日一句
 ec--双语阅读

@@ -105,6 +105,10 @@ class library{
             "idate"=>date("Y-m-d")
         ));
     }
+    public function getnotelist($openid,$limit=3){
+       $sql="SELECT * FROM draftrecord WHERE openid= '{$openid}' limit {$limit}";
+       return $this->target->get_all($sql);
+    }
     public function getBookRecordId(){
         return $this->target->insert_id();
     }
