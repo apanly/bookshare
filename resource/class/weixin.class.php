@@ -72,7 +72,7 @@ class Weixin {
                     case 10:
                         die(json_encode(array('status'=>1,'errCode'=>$match[1],'msg'=>"该公众会议号已经过期，无法再登录使用")));
                     case 0:
-                        $this->userFakeid = $this->getUserFakeid();
+                        $this->userFakeid = $this->getUserFakeid();//登录的时候获取很多用户信息不好，在需要的时候在获取就可以了
                         break;
                 }
             }

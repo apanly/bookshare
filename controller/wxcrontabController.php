@@ -114,7 +114,8 @@ class wxcrontabController extends Controller
                                 "city"=>$tmpcontact['city'],
                                 "province"=>$tmpcontact['province'],
                                 "country"=>$tmpcontact['country'],
-                                "gender"=>$tmpcontact['gender']
+                                "gender"=>$tmpcontact['gender'],
+                                "flag"=>1
                             );
                         }
                     }

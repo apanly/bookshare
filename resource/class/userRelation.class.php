@@ -22,7 +22,7 @@ class userRelation
     }
     public function getNotCompleteUser($limit=10){
         $sql="SELECT * FROM user_relation WHERE flag=0 limit {$limit}";
-        return $this->target->get_one($sql);
+        return $this->target->get_all($sql);
     }
 
     public function updateUserInfo($params){
