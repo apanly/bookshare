@@ -100,6 +100,14 @@ class weixinController extends Controller
                 //$contentStr=$this->saveLiftMedia($str_q,$fromUsername,$mediatype);
                 $contentStr="感谢你使用微信记录生活!可以到http://book.yyabc.org/index.php?a=media查看";
                 break;
+            case "sa":
+                if($str_q){
+                    $this->writeCustomLog($fromUsername."的建议是:".$str_q);
+                    $contentStr="感谢你的建议,我们会做的更好";
+                }else{
+                    $contentStr="操作有误,sa后面需要有内容，例如 sa 如果可以显示我分享的图片列表就好了";
+                }
+                break;
             case "image":
                 $mediatype=1;
                 $contentStr=$this->saveLiftMedia($str_q,$fromUsername,$mediatype);
@@ -315,6 +323,7 @@ eo--每日一句
 ec--双语阅读
 ew--英语新闻\n
 综合服务
+sa--给些建议
 图片,音频,视频
 EOT;
     return $help;
@@ -327,8 +336,9 @@ EOT;
 图书分享
 英语分享
 生活多媒体分享
+所有分享的图片视频音频都会保存都到网站
 回复 ? 获取操作命令
-或者可以关注我们的网站 yyabc.org
+或者可以关注我们的网站 book.yyabc.org
 EOT;
         return $help;
     }
@@ -374,11 +384,11 @@ EOT;
     }
 
     private function writeLog(){
-        file_put_contents(ROOT_PATH.date("Ymd")."weixin.log",var_export($GLOBALS["HTTP_RAW_POST_DATA"],true),FILE_APPEND);
+        file_put_contents(ROOT_PATH."weixinlog/".date("Ymd")."weixin.log",var_export($GLOBALS["HTTP_RAW_POST_DATA"],true),FILE_APPEND);
     }
 
     private function writeCustomLog($content){
-        file_put_contents(ROOT_PATH."weixincustom.log",$content);
+        file_put_contents(ROOT_PATH."weixinlog/".date("Ymd")."weixincustom.log",$content."\n",FILE_APPEND);
     }
 
     public function testAction(){
