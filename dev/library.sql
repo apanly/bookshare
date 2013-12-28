@@ -97,3 +97,13 @@ CREATE TABLE `user_relation` (
  KEY `flag` (`flag`),
  KEY `fakeid` (`fakeid`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+CREATE TABLE `bookrecord` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `bookid` int(10) NOT NULL,
+  `content` text COLLATE utf8_unicode_ci NOT NULL,
+  `uid` int(10) NOT NULL,
+  `idate` datetime NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `uid` (`uid`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
