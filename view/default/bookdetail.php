@@ -1,4 +1,6 @@
 <script src="static/js/detail.js"></script>
+<script src="static/js/ctrenter.js"></script>
+<link href="static/css/detail.css" rel="stylesheet">
 <div class="row-fluid">
     <ul class="pager">
         <?php if($bookprev):?>
@@ -59,12 +61,29 @@
     </div>
 </div>
 <div class="row-fluid">
-    <ul class="pager">
-        <?php if($bookprev):?>
-        <li><a href="index.php?a=bookdetail&id=<?php echo $bookprev['id'];?>">上一本:<?php echo $bookprev['title'];?></a></li>
-        <?php endif;?>
-        <?php if($booknext):?>
-        <li><a href="index.php?a=bookdetail&id=<?php echo $booknext['id'];?>">下一本:<?php echo $booknext['title'];?></a></li>
-        <?php endif;?>
+    <ul class="nav nav-tabs">
+        <li class="active"><a href="javascript:void(0);">评论</a></li>
+        <li><a href="javascript:void(0);">点评</a></li>
     </ul>
+</div>
+<div class="replylist row-fluid">
+
+</div>
+<div class="reply row-fluid" style="display: none;">
+    <div class="alert alert-success span12">
+        <button data-dismiss="alert" class="close" type="button">×</button>
+        <strong>发布成功</strong>
+    </div>
+    <div class="span12">
+        请输入你对本书的点评或者笔记
+    </div>
+    <div class="span12">
+        <textarea  style="height:85px;width:100%;" placeholder="请输入你的点评或者读书笔记" id="replycontent"></textarea>
+    </div>
+    <div class="span8">
+        <button type="button" class="btn">查看点评</button>
+    </div>
+    <div class="span4">
+        <button type="button" class="btn btn-primary" >发布</button>(Ctr+Enter)
+    </div>
 </div>

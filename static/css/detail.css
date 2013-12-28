@@ -1,0 +1,15 @@
+.reply .span12{
+    margin-left: 0px;
+}
+.reply .span8{
+    margin-left: 0px;
+}
+.reply .span4{
+    text-align: right;
+}
+#replycontent{
+    padding: 0px 0px;
+}
+.reply .alert-success{
+    display: none;
+}

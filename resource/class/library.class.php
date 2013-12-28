@@ -118,4 +118,8 @@ class library{
     public function getBookRecordId(){
         return $this->target->insert_id();
     }
+
+    public function insertRecord($params){
+        return $this->target->insert("bookrecord",$params);
+    }
 }

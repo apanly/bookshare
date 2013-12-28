@@ -58,14 +58,15 @@ class defaultController extends Controller
         }
         $bookinfo['image_url']=innerimage::getImage($bookinfo['image_url']);
         $bookinfo['qrcodeimage_url']=innerimage::getImage(util::generateQRfromGoogle(WEB_DOMAIN."/index.php?a=bookdetail&id={$id}&type=qr",120));
-        $ordertarget=new order();
+        /*$ordertarget=new order();
         $orderlist=$ordertarget->getOrderByBookId($id,0);
         if($orderlist){
             foreach($orderlist as $key=>$item){
                  $orderlist[$key]['uname']=$this->half_replace($item['uname']);
             }
         }
-        $this->orderlist=$orderlist;
+        $this->orderlist=$orderlist;*/
+
         $this->book=$bookinfo;
         if($bookinfo['booksummary'] && $bookinfo['booktag'] && $bookinfo['creator'] && $bookinfo['pages'] && $bookinfo['publisher'] && $bookinfo['pdate']){
             $this->getbookdetail=1;
@@ -76,6 +77,34 @@ class defaultController extends Controller
         $this->booknext=$booknext;
         $this->atype="home";
         return $this->render("default");
+    }
+    public function replyAction(){
+        $response=array("code"=>1,"message"=>"发布失败！");
+        $bookid=$_POST['id']?intval($_POST['id']):null;
+        $content=$_POST['content']?trim($_POST['content']):null;
+        if(!filter_var($bookid,FILTER_VALIDATE_INT)){
+            $response['message']="发布失败,参数错误";
+            return json_encode($response);
+        }
+        if(!$content){
+            $response['message']="发布失败,参数错误";
+            return json_encode($response);
+        }
+        $sqlparams=array();
+        $sqlparams['bookid']=$bookid;
+        $sqlparams['content']=$content;
+        $sqlparams['idate']=date("Y-m-d H:i:s");
+        $sqlparams['uid']=0;
+        if($this->logstatus==1){
+            $sqlparams['uid']=$this->userinfo['uid'];
+        }
+        $booktarget=new library();
+        $boolflag=$booktarget->insertRecord($sqlparams);
+        if($boolflag){
+            $response['code']=0;
+            $response['message']="发布成功";
+        }
+        return json_encode($response);
     }
     public function mediaAction(){
         $pageSize=12;
