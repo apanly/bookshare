@@ -2,11 +2,13 @@
 class toolsController extends Controller
 {
     public function __construct(){
-        $uid=$_COOKIE['uid'];
-        $username=$_COOKIE['username'];
-        if($uid && $username){
-            $this->logstatus=1;
-            $this->userinfo=array('uname'=>$username,"uid"=>$uid);
+        $cookiloginoauth=dcookie::dgetcookie("loginoauth");
+        if($cookiloginoauth){
+            list($username,$uid)=explode("|",$cookiloginoauth);
+            if($uid && $username){
+                $this->logstatus=1;
+                $this->userinfo=array('uname'=>$username,"uid"=>$uid);
+            }
         }else{
             $this->location("index.php");
         }
