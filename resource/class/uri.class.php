@@ -11,7 +11,7 @@ class uri {
         return "http://www.".self::getBaseDomain();
     }
     public static function loginUri(){
-        return "http://oauth.".self::getBaseDomain();
+        return "http://oauth.".self::getBaseDomain()."/?from=book";
     }
     public static function homeinterUri(){
         return "http://blog.".self::getBaseDomain();
