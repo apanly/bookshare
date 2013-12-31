@@ -28,8 +28,8 @@
                         <li <?php if($atype=="Media"):?> class="active" <?php endif;?>><a href="index.php?a=media">Media</a></li>
                         <li <?php if($atype=="projects"):?> class="active" <?php endif;?>><a href="index.php?a=projects">Projects</a></li>
                         <li <?php if($atype=="about"):?> class="active" <?php endif;?>><a href="index.php?a=about">About</a></li>
-                        <li><a href="http://yyabc.org">YYABC</a></li>
-                        <li><a href="http://blog.yyabc.org">IH</a></li>
+                        <li><a href="<?php echo uri::englishComUri();?>">YYABC</a></li>
+                        <li><a href="<?php echo uri::homeinterUri();?>">IH</a></li>
                     </ul>
                     <form action="index.php" class="navbar-search pull-left">
                         <input name="bookname" type="text" placeholder="输入书籍名称" class="search-query span2">
@@ -50,7 +50,7 @@
                     <?php else:?>
                     <ul class="nav pull-right">
                         <li class="divider-vertical"></li>
-                        <li><a href="index.php?a=login">Login</a></li>
+                        <li><a href="<?php echo uri::loginUri();?>">Login</a></li>
                     </ul>
                     <?php endif;?>
                 </div>

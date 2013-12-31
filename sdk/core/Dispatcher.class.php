@@ -52,15 +52,15 @@ class Dispatcher
     return $this->c;
    }
    private function init(){
-       global $config;
-       include(ROOT_PATH."resource/class/dcookie.class.php");
-       $saltkey=dcookie::dgetcookie("saltkey");
-       if(empty($saltkey)) {
-           $tmprand=util::random(8);
-           dcookie::dsetcookie('saltkey',$tmprand, 86400 * 30, 1, 1);
-           $config['secury']['authkey']= substr(md5(util::getRemoteIp().$_SERVER['HTTP_USER_AGENT'].$config['secury']['authkey'].$tmprand),0,8);
-       }
-       unset($saltkey);
+//       global $config;
+//       include(ROOT_PATH."resource/class/dcookie.class.php");
+//       $saltkey=dcookie::dgetcookie("saltkey");
+//       if(empty($saltkey)) {
+//           $tmprand=util::random(8);
+//           dcookie::dsetcookie('saltkey',$tmprand, 86400 * 30, 1, 1);
+//           $config['secury']['authkey']= substr(md5(util::getRemoteIp().$_SERVER['HTTP_USER_AGENT'].$config['secury']['authkey'].$tmprand),0,8);
+//       }
+//       unset($saltkey);
    }
 
    private function output($content){
