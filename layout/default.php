@@ -43,7 +43,7 @@
                             <ul class="dropdown-menu">
                                 <li><a href="index.php?c=tools">knapsack</a></li>
                                 <li><a href="javascript:void(0);">Info</a></li>
-                                <li><a href="index.php?a=logout">LogOut</a></li>
+                                <li><a href="<?php echo uri::logoutUri();?>">LogOut</a></li>
                             </ul>
                         </li>
                     </ul>
