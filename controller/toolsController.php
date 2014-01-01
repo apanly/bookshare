@@ -10,7 +10,7 @@ class toolsController extends Controller
             $saltkey=dcookie::dgetcookie("saltkey");
             $saltprekey=$config['saltprekey'];
             $saltkey=$saltprekey.$saltkey;
-            $tmpseckey=md5(serialize($username.$uid,$saltkey));
+            $tmpseckey=md5(serialize($username.$uid.$saltkey));
             if($seckey==$tmpseckey){
                 if($uid && $username){
                     $this->logstatus=1;
