@@ -3,6 +3,7 @@ var ops={
     init:function(){
         this.eventBind();
         this.view();
+        this.getList();
     },
     eventBind:function(){
         var that=this;
@@ -43,9 +44,13 @@ var ops={
                     dataType:'json',
                     success:function (response) {
                         var code=response.code;
-                        $(".reply .alert-success").show();
+                        $(".reply .alert strong").html("发布成功!!");
+                        $(".reply .alert").show();
                     }
                 });
+            }else{
+                $(".reply .alert strong").html("请输入内容!!");
+                $(".reply .alert").show();
             }
         }
     },
@@ -62,10 +67,28 @@ var ops={
                 }
             });
         }
+    },
+    getList:function(){
+        var request=GetRequest();
+        var bookid=request['id'];
+        if(/^\d*$/.test(bookid)){
+            $.ajax({
+                type:"POST",
+                url:"index.php?a=replylist",
+                data:"id="+bookid,
+                dataType:'text',
+                success:function (response) {
+                    if(response){
+                        $(".replylist").html(response);
+                    }
+                }
+            });
+        }
+    },
+    tabChange:function(flag){
+        $($("ul.nav-tabs li").get(flag)).click();
     }
 }
 $(document).ready(function(){
-
-
     ops.init();
 });

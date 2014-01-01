@@ -4,7 +4,14 @@ class defaultController extends Controller
     public function __construct(){
         $cookiloginoauth=dcookie::dgetcookie("loginoauth");
         if($cookiloginoauth){
+            global $config;
             list($username,$uid)=explode("|",$cookiloginoauth);
+            $seckey=dcookie::dgetcookie("seckey");
+            $saltkey=dcookie::dgetcookie("saltkey");
+            $saltprekey=$config['saltprekey'];
+            $saltkey=$saltprekey.$saltkey;
+            $tmpseckey=md5(serialize($username.$uid,$saltkey));
+            if($seckey==$tmpseckey)
             if($uid && $username){
                 $this->logstatus=1;
                 $this->userinfo=array('uname'=>$username,"uid"=>$uid);
@@ -108,6 +115,16 @@ class defaultController extends Controller
         }
         return json_encode($response);
     }
+
+    public function replylistAction(){
+        $bookid=$_POST['id']?intval($_POST['id']):null;
+        if(filter_var($bookid,FILTER_VALIDATE_INT)){
+            $booktarget=new library();
+            $bookreplylist=$booktarget->getRecordList($bookid);
+            echo Slot::includeSlot("replylist",array("data"=>$bookreplylist));
+        }
+    }
+
     public function mediaAction(){
         $pageSize=12;
         $page=$_GET['page']?(int)($_GET['page']):1;

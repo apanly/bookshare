@@ -122,4 +122,9 @@ class library{
     public function insertRecord($params){
         return $this->target->insert("bookrecord",$params);
     }
+
+    public function getRecordList($bookid,$page=0,$pageSize=10){
+        $sql="SELECT * FROM bookrecord WHERE bookid={$bookid} order by id desc limit {$page},{$pageSize}";
+        return $this->target->get_all($sql);
+    }
 }

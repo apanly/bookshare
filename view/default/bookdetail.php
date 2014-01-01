@@ -81,7 +81,7 @@
         <textarea  style="height:85px;width:100%;" placeholder="请输入你的点评或者读书笔记" id="replycontent"></textarea>
     </div>
     <div class="span8">
-        <button type="button" class="btn">查看点评</button>
+        <a class="btn btn-link" href="javascript:ops.tabChange(0);void(0);">查看点评</a>
     </div>
     <div class="span4">
         <button type="button" class="btn btn-primary" >发布</button>(Ctr+Enter)

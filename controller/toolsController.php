@@ -4,10 +4,18 @@ class toolsController extends Controller
     public function __construct(){
         $cookiloginoauth=dcookie::dgetcookie("loginoauth");
         if($cookiloginoauth){
+            global $config;
             list($username,$uid)=explode("|",$cookiloginoauth);
-            if($uid && $username){
-                $this->logstatus=1;
-                $this->userinfo=array('uname'=>$username,"uid"=>$uid);
+            $seckey=dcookie::dgetcookie("seckey");
+            $saltkey=dcookie::dgetcookie("saltkey");
+            $saltprekey=$config['saltprekey'];
+            $saltkey=$saltprekey.$saltkey;
+            $tmpseckey=md5(serialize($username.$uid,$saltkey));
+            if($seckey==$tmpseckey){
+                if($uid && $username){
+                    $this->logstatus=1;
+                    $this->userinfo=array('uname'=>$username,"uid"=>$uid);
+                }
             }
         }else{
             $this->location("index.php");
