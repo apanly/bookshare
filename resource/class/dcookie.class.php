@@ -11,22 +11,20 @@ if(!defined('IN_WEB')) {
 }
 class dcookie
 {
-    public static   function dsetcookie($var, $value = '', $life = 0, $prefix = 1, $httponly = false) {
-        global $_G;
-        $cookiepre=$_G['config']['cookiepre'];
-        $var = ($prefix ? $cookiepre : '').$var;
-        $_COOKIE[$var] = $value;
+    public static   function dsetcookie($var, $value = '', $life = 0, $httponly = false) {
+        global $config;
         if($value == '' || $life < 0) {
             $value = '';
             $life = -1;
         }
         $life = $life > 0 ? time() + $life : ($life < 0 ? time() - 31536000 : 0);
-        $path = $httponly && PHP_VERSION < '5.2.0' ? $cookiepre.'; HttpOnly' :"/";
+        $path = $httponly && PHP_VERSION < '5.2.0' ? '; HttpOnly' :"/";
         $secure = $_SERVER['SERVER_PORT'] == 443 ? 1 : 0;
+        $domain=$config['domain'];
         if(PHP_VERSION < '5.2.0') {
-            setcookie($var, $value, $life, $path, '', $secure);
+            setcookie($var, $value, $life, $path, $domain, $secure);
         } else {
-            setcookie($var, $value, $life, $path, '', $secure, $httponly);
+            setcookie($var, $value, $life, $path, $domain, $secure, $httponly);
         }
     }
 

@@ -11,11 +11,16 @@ class defaultController extends Controller
             $saltprekey=$config['saltprekey'];
             $saltkey=$saltprekey.$saltkey;
             $tmpseckey=md5(serialize($username.$uid,$saltkey));
-            if($seckey==$tmpseckey)
-            if($uid && $username){
-                $this->logstatus=1;
-                $this->userinfo=array('uname'=>$username,"uid"=>$uid);
+            if($seckey==$tmpseckey){
+                if($uid && $username){
+                    $this->logstatus=1;
+                    $this->userinfo=array('uname'=>$username,"uid"=>$uid);
+                }
+            }else{
+                dcookie::dsetcookie("loginoauth",'',-86400);
+                dcookie::dsetcookie("seckey",'',-86400);
             }
+
         }
     }
     public function defaultAction(){

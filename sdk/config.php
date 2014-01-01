@@ -32,3 +32,4 @@ $config['db'][1] = array(
     "logfilepath" => ROOT_PATH."resource/cache/dblog.txt" //开启日志
 );
 $config['saltprekey']="vincentguo";
+$config['domain']=".yyabc.test";

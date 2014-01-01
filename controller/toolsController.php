@@ -16,6 +16,9 @@ class toolsController extends Controller
                     $this->logstatus=1;
                     $this->userinfo=array('uname'=>$username,"uid"=>$uid);
                 }
+            }else{
+                dcookie::dsetcookie("loginoauth",'',-86400);
+                dcookie::dsetcookie("seckey",'',-86400);
             }
         }else{
             $this->location("index.php");
