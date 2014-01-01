@@ -26,7 +26,9 @@ class uri {
     protected  static function getBaseDomain(){
         $domain=$_SERVER['HTTP_HOST'];
         $strdomain=explode(".",$domain);
-        unset($strdomain[0]);
+        if(count($strdomain)>2){
+            unset($strdomain[0]);
+        }
         return implode(".",$strdomain);
     }
 
