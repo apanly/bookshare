@@ -89,11 +89,13 @@ class Mysql
         }
         while (list($key, $val) = each($dataArray)) {
             $field .= "$key,";
+            $val=stripslashes($val);
             $value .= "'".mysql_real_escape_string($val)."',";
         }
         $field = substr($field, 0, -1);
         $value = substr($value, 0, -1);
         $sql = "insert into $table($field) values($value)";
+        //echo $sql;exit();
         $this->write_log("插入 " . $sql);
         if (!$this->query($sql)) return false;
         return true;

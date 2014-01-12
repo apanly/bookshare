@@ -149,12 +149,12 @@ class util
         }
     }
 
-    public static function dstripslashes($string)
+    public static function dstripslashes($data)
     {
-        if (empty($string)){
-            return $string;
+        if(!get_magic_quotes_gpc()){//只对POST/GET/cookie过来的数据增加转义
+            return is_array($data)?array_map('addslashes',$data):htmlspecialchars(addslashes($data));
         }else{
-            return is_array($string) ? array_map('self::dstripslashes', $string) : htmlspecialchars(addslashes($string));
+            return $data;
         }
     }
 

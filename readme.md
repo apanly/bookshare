@@ -4,6 +4,7 @@
 #使用方式
 * 通过andriod软件 sharebook.apk 扫描提交自己已有的书籍(提交一本书籍有10个积分),通过积分分享借阅他人的书籍
 * 借阅限制:同时只能同时接5本书
+* 自动化部署可以参考 https://github.com/apanly/ansible-yyabc
 
 #演示
 ![书籍列表](https://raw.github.com/apanly/bookshare/master/static/img/show.png)
