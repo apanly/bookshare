@@ -30,6 +30,7 @@
                         <li <?php if($atype=="about"):?> class="active" <?php endif;?>><a href="index.php?a=about">About</a></li>
                         <li><a href="<?php echo uri::englishComUri();?>">YYABC</a></li>
                         <li><a href="<?php echo uri::homeinterUri();?>">IH</a></li>
+                        <li><a href="http://tech.yyabc.org/%E5%85%B3%E4%BA%8Eta">AboutMe</a></li>
                     </ul>
                     <form action="index.php" class="navbar-search pull-left">
                         <input name="bookname" type="text" placeholder="输入书籍名称" class="search-query span2">
