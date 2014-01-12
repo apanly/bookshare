@@ -151,15 +151,11 @@ class util
 
     public static function dstripslashes($string)
     {
-        if (empty($string)) return $string;
-        if (is_array($string)) {
-            foreach ($string as $key => $val) {
-                $string[$key] = self::dstripslashes($val);
-            }
-        } else {
-            $string = stripslashes($string);
+        if (empty($string)){
+            return $string;
+        }else{
+            return is_array($string) ? array_map('self::dstripslashes', $string) : htmlspecialchars(addslashes($string));
         }
-        return $string;
     }
 
     public static function encodePassWord($pass, $key)
