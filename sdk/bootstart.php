@@ -16,6 +16,7 @@ if (!preg_match("/^http/", $domain)) {
 define("IMG_PREFIX",WEB_DOMAIN."/static/");
 define("SLOT_PATH", ROOT_PATH . "view".DS."slot".DS);
 define("AUTOPATH", ROOT_PATH . "resource".DS."cache".DS."autoload.php");
+define('LOG4PHP_DIR',ROOT_PATH."../log4php".DS);
 include(ROOT_PATH . "sdk".DS."function.php");
 include(ROOT_PATH . "sdk".DS."config.php");
 include(ROOT_PATH . "etc".DS."config.php");

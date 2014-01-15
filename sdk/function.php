@@ -51,3 +51,16 @@ function upf_error($error, $errno = 500) {
     echo $error;
     if (error_reporting() == 0) return false;
 }
+
+function shutdownRecordLog(){
+    require_once(LOG4PHP_DIR."Logger.php");
+    Logger::configure(LOG4PHP_DIR."log4php.properties");
+    $logger = Logger::getRootLogger();
+    $server=$_SERVER;
+    $referer=$server['HTTP_REFERER'];
+    $uri=$server['REQUEST_URI'];
+    if($uri){
+        $ip=util::getRemoteIp();
+        $logger->debug($ip." ".$referer." ".$uri);
+    }
+}

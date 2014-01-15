@@ -73,5 +73,9 @@ class Dispatcher
        //set error handler
        set_error_handler("customError");
        set_exception_handler('customException');
+       register_shutdown_function(array($this, "shutdown"));
    }
+    public function shutdown() {
+        call_user_func("shutdownRecordLog");
+    }
 }
