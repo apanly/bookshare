@@ -22,7 +22,12 @@ class uri {
     public static function itechUri(){
         return "http://tech.".self::getBaseDomain();
     }
-
+    public static function cdnstaicUri(){
+        return "http://cdnstatic.".self::getBaseDomain()."/";
+    }
+    public static function docsUri(){
+        return "http://docs.".self::getBaseDomain()."/";
+    }
     protected  static function getBaseDomain(){
         $domain=$_SERVER['HTTP_HOST'];
         $strdomain=explode(".",$domain);

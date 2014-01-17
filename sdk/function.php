@@ -61,6 +61,8 @@ function shutdownRecordLog(){
     $uri=$server['REQUEST_URI'];
     if($uri){
         $ip=util::getRemoteIp();
-        $logger->debug($ip." ".$referer." ".$uri);
+        $agent=$server['HTTP_USER_AGENT'];
+        $accesslog='"'.$ip.'"'.' "'.$referer.'"'.' "'.$uri.'"'.' "'.$agent.'"';
+        $logger->debug($accesslog);
     }
 }
