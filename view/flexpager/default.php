@@ -7,7 +7,7 @@
         $('#documentViewer').FlexPaperViewer(
             { config : {
                 jsDirectory:'<?php echo uri::cdnstaicUri();?>',
-                SWFFile : '<?php echo uri::docsUri();?>Paper.pdf.swf',
+                SWFFile : '<?php echo uri::docsUri();?>test.swf',
                 Scale : 1,
                 ZoomTransition : 'easeOut',
                 ZoomTime : 0.5,
